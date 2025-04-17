@@ -9,7 +9,7 @@
 }
 
 .title {
-    display: inline;
+    display: flex;
     grid-column: 2;
     margin: 0;
 }

@@ -1,16 +1,24 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-
+import styles from './MainNav.module.css'; 
 
 
 export default function MainNav() {
   const user = useContext(UserContext);
 
   return (
-    <nav id="main-nav" className="nav-list">
+    <nav id="main-nav" className={styles.navList}>
       <div className="nav-link">
         <NavLink to="/">Home</NavLink>
+      </div>
+      <div className = "nav-link">
+        <NavLink to= "/pets">
+          Pets
+        </NavLink>
+      </div>
+      <div className ="nav-link">
+        <NavLink to="/volunteers"> Volunteers</NavLink>
       </div>
       {user ? (
         <>
@@ -31,6 +39,8 @@ export default function MainNav() {
             Login
           </NavLink>
         </div>
+      
+        
       )}
     </nav>
   );

@@ -1,0 +1,15 @@
+.header-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(169, 208, 243);
+}
+
+.logo {
+    grid-column: 1;
+}
+
+.title {
+    display: inline;
+    grid-column: 2;
+    margin: 0;
+}

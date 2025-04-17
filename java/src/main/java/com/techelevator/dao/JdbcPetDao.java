@@ -1,0 +1,103 @@
+package com.techelevator.dao;
+
+import com.techelevator.exception.DaoException;
+import com.techelevator.model.Pet;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class JdbcPetDao implements PetDao{
+
+    private final JdbcTemplate jdbcTemplate;
+
+    public JdbcPetDao(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public Pet getPetById(int id) {
+        Pet pet = null;
+
+        // Query
+        String sql = "SELECT * FROM pet WHERE id = ?";
+
+        try{
+
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
+            if(results.next()) {
+                pet = mapRowToPet(results);
+            }
+        }catch ( CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        }
+        return pet;
+
+        }
+
+
+    public List<Pet> getPets (){
+        List<Pet> pets = new ArrayList<>();
+
+        // Query
+        String sql = "SELECT * FROM pet";
+        try {
+            //
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while (results.next()) {
+                Pet pet = mapRowToPet(results);
+                pets.add(pet);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+                throw new DaoException("Unable to connect to server or database", e);
+            }
+            return pets;
+        }
+
+
+        public Pet createPet(Pet pet){
+
+            Pet newPet = null;
+            //Query
+            String insertPetSql = "INSERT INTO pet (name, age, species, sex, description, breed, adoption_status_id, photo)" +
+                    "VALUES (?,?,?,?,?,?,?,?) RETURNING id";
+
+            try {
+                // String insertUserSql = "INSERT INTO users (username, password_hash, role) values (LOWER(TRIM(?)), ?, ?) RETURNING user_id";
+                int newPetId = jdbcTemplate.queryForObject(insertPetSql, int.class, pet.getName(), pet.getAge(),
+                        pet.getSpecies(), pet.getSex(), pet.getDescription(), pet.getBreed(), pet.getAdoptionStatus(), pet.getPhoto());
+
+                newPet = getPetById(newPetId);
+
+            } catch (CannotGetJdbcConnectionException e) {
+                throw new DaoException("Unable to connect to server or database", e);
+            } catch (
+                DataIntegrityViolationException e) {
+                throw new DaoException("Data integrity violation", e);
+            }
+            return newPet;
+
+        }
+
+    private Pet mapRowToPet(SqlRowSet rowSet){
+        Pet pet = new Pet();
+
+        pet.setId(rowSet.getInt("id"));
+        pet.setName(rowSet.getString("name"));
+        pet.setAge(rowSet.getInt("age"));
+        pet.setSpecies(rowSet.getString("species"));
+        pet.setSex(rowSet.getString("sex"));
+        pet.setDescription(rowSet.getString("description"));
+        pet.setBreed(rowSet.getString("breed"));
+        pet.setAdoptionStatus(rowSet.getInt("adoption_status_id"));
+        pet.setPhoto(rowSet.getString("photo"));
+
+        return pet;
+    }
+
+
+}

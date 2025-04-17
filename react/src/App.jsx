@@ -9,6 +9,7 @@ import RegisterView from './views/RegisterView/RegisterView';
 import UserProfileView from './views/UserProfileView/UserProfileView';
 import MainNav from './components/MainNav/MainNav';
 import ProtectedRoute from './components/ProtectedRoute';
+import AppHeader from './components/AppHeader/AppHeader';
 
 import axios from 'axios';
 
@@ -57,6 +58,7 @@ export default function App() {
     <BrowserRouter>
       <div id="app">
         <UserContext.Provider value={user}>
+          <AppHeader title="Gimme Shelter" logo="logo" />
           <MainNav />
           <main id="main-content">
             <Routes>

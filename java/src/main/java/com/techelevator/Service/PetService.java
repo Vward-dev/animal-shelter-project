@@ -27,5 +27,13 @@ public class PetService {
      public Pet getPetById(int id){
         return petDao.getPetById(id);
      }
+
+     public Pet updatePet(Pet pet) {
+        return petDao.updatePet(pet);
+     }
+
+     public int deletePetById(int id) {
+        return petDao.deletePetById(id);
+     }
 }
 

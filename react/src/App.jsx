@@ -13,6 +13,7 @@ import AppHeader from './components/AppHeader/AppHeader';
 
 import axios from 'axios';
 import PetView from './views/PetView/PetView';
+import VolunteerView from './views/VolunteerView/VolunteerView';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -68,6 +69,7 @@ export default function App() {
               <Route path="/logout" element={<LogoutView onLogout={handleLogout} />} />
               <Route path="/register" element={<RegisterView />} />
               <Route path="/pets" element= { <PetView /> } />
+              <Route path="/volunteer" element={<VolunteerView />} ></Route>
               <Route
                 path="/userProfile"
                 element={

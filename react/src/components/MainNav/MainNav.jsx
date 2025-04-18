@@ -18,7 +18,7 @@ export default function MainNav() {
         </NavLink>
       </div>
       <div className ="nav-link">
-        <NavLink to="/volunteers"> Volunteers</NavLink>
+        <NavLink to="/volunteer"> Volunteers</NavLink>
       </div>
       {user ? (
         <>

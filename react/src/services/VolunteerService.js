@@ -1,0 +1,31 @@
+import axios from "axios";
+
+const http= axios.create({
+    baseURL: 'http://localhost:9000/'
+});
+
+export default {
+
+    getAllVolunteers(){
+        return http.get('volunteer')
+    },
+
+    getVolunteerId(id){
+        return http.get(`volunteer/${id}`)
+    },
+
+    addVolunteer(volunteer){
+        return http.post('volunteer', volunteer)
+
+    },
+
+    updateVolunteer(volunteer){
+        return http.put(`volunteer/${volunteer.id}`, volunteer)
+    },
+
+    deleteVolunteer(id){
+        return http.delete(`volunteer/${id}`)
+    }
+
+};
+

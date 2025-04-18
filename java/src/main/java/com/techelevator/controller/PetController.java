@@ -48,6 +48,22 @@ public class PetController {
         return pet;
     }
 
+    @RequestMapping ( path = "/{id}", method = RequestMethod.PUT )
+    public Pet updatePet(@PathVariable int id, @RequestBody Pet pet) {
+        Pet updatedPet = null;
+
+        updatedPet = petService.updatePet(pet);
+
+        return updatedPet;
+    }
+
+    @RequestMapping ( path = "/{id}", method = RequestMethod.DELETE )
+    public int deletePetById(@PathVariable int id) {
+        int rowsAffected = petService.deletePetById(id);
+
+        return rowsAffected;
+    }
+
 
 
 

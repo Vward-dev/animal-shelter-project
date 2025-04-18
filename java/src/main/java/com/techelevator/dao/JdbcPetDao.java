@@ -83,6 +83,41 @@ public class JdbcPetDao implements PetDao{
 
         }
 
+        public Pet updatePet(Pet updatedPet) {
+        Pet newPet = null;
+
+        String sql = "UPDATE pet SET name=?, species=?, age=?, sex=?, description=?, breed=?, adoption_status_id=?, photo=? WHERE id=?;";
+
+            try {
+                int rowsAffected = jdbcTemplate.update(sql, updatedPet.getName(), updatedPet.getSpecies(), updatedPet.getAge(),
+                        updatedPet.getSex(), updatedPet.getDescription(), updatedPet.getBreed(), updatedPet.getAdoptionStatus(),
+                        updatedPet.getPhoto(), updatedPet.getId());
+                if (rowsAffected == 0) {
+                    throw new DaoException("Zero rows affected, expected at least one");
+                }
+                newPet = getPetById(updatedPet.getId());
+            } catch (CannotGetJdbcConnectionException e) {
+                throw new DaoException("Unable to connect to server or database", e);
+            } catch (DataIntegrityViolationException e) {
+                throw new DaoException("Data integrity violation", e);
+            }
+            return newPet;
+        }
+
+        public int deletePetById(int id) {
+            int numberOfRows = 0;
+            String sql = "DELETE FROM pet WHERE id = ?";
+
+            try {
+                numberOfRows = jdbcTemplate.update(sql, id);
+            } catch (CannotGetJdbcConnectionException e) {
+                throw new DaoException("Unable to connect to server or database", e);
+            } catch (DataIntegrityViolationException e) {
+                throw new DaoException("Data integrity violation", e);
+            }
+            return numberOfRows;
+        }
+
     private Pet mapRowToPet(SqlRowSet rowSet){
         Pet pet = new Pet();
 

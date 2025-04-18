@@ -58,6 +58,7 @@ return (
          <p>
             <span>{pet.description}</span>
          </p>
+         <img src= {pet.photo}  alt = {pet.name} />  
 
 
         </>

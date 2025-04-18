@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
+import PetComponent from '../../components/PetComponent/PetComponent';
 
 export default function PetView() {
 
@@ -31,7 +32,12 @@ export default function PetView() {
     return (
 
         <>
-        <h1>PetView</h1>
+        <div>{errorMessage}</div>
+        <h1>Pets For Adoption</h1>
+        
+        {pet.map((pet) => (
+            <PetComponent pet = {pet}></PetComponent>
+        ))}
         
         </>
 

@@ -1,0 +1,103 @@
+.pet-component {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 16px;
+    padding: 16px;
+    
+    background-color: black;
+
+}
+.pet-details {
+display: flex;
+flex-wrap: wrap;
+
+margin-bottom: 4px;
+}
+.pet-details p {
+    flex: 1 1 50%;
+    margin: 4px 0;
+}
+.pet-name{
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+margin-bottom: 12px;
+
+}
+
+.dog-name{
+    background-color: red;
+}
+.cat-name {
+    background-color: blue;
+}
+.pet-species{
+
+}
+.pet-breed{
+
+}
+.pet-sex{
+
+}
+.pet-age{
+
+}
+.pet-description{
+
+}
+.pet-image{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px ;
+    margin-bottom: 12px;
+    object-fit: cover;
+    max-height: fit-content;
+
+}
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*   <article className={styles.petComponent}>
+         <h1>{pet.name}</h1>
+        <section className={styles.petDetails}>
+         <p>
+            <span className= {styles.petSpecies}>{pet.species}</span>
+            <span className= {styles.petBreed} >{pet.breed}</span>
+         </p>
+
+         <p>
+            <span className= {styles.petSex}>{pet.sex}</span>
+         </p>
+         <p>
+            <span className={styles.petAge}>{pet.age}</span>
+
+         </p>
+         <p>
+            <span className={styles.petDescription}>{pet.description}</span>
+         </p>
+         </section>
+
+         <img src= {pet.photo}  alt = {pet.name} className={styles.petImage} />  
+         
+         <footer>
+            <button>Adopt Me</button>
+         </footer>
+
+
+        </article>
+    )}
+
+</>
+
+)
+
+
+}
+*/

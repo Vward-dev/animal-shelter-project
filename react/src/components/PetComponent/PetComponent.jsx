@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
+import styles from './PetComponent.module.css';
 
 import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
 
 export default function PetComponent( {pet} ) {
+    let petNameClass = styles.petName;
+    if (pet.species === 'Dog'){
+        petNameClass += ` ${styles.dogName}`;
+    }else if(pet.species === 'Cat') {
+        petNameClass +=  ` ${styles.catName}`;
+    }
 
 const [errorMessage, setErrorMessage] = useState('');
 // const [pet, setPet] = useState([]);
@@ -40,28 +47,39 @@ return (
     {isLoading ? (
         <p>Loading...</p>
     ) : (
-        <>
-         <h1>{pet.name}</h1>
+        <article className={styles.petComponent}>
+            
+         <h1 className={styles.petName}>{pet.name}</h1>
+         
 
+        <section className={styles.petDetails}>
          <p>
-            <span>{pet.species}</span>
-            <span>{pet.breed}</span>
+            <span className= {styles.petSpecies}>{pet.species}</span>
+        </p>
+         <p>
+            <span className= {styles.petBreed} >{pet.breed}</span>
          </p>
 
          <p>
-            <span>{pet.sex}</span>
+            <span className= {styles.petSex}>{pet.sex}</span>
          </p>
          <p>
-            <span>{pet.age}</span>
+            <span className={styles.petAge}>{pet.age}</span>
 
          </p>
          <p>
-            <span>{pet.description}</span>
+            <span className={styles.petDescription}>{pet.description}</span>
          </p>
-         <img src= {pet.photo}  alt = {pet.name} />  
+         </section>
+
+         <img src= {pet.photo}  alt = {pet.name} className={styles.petImage} />  
+         
+         <footer>
+            <button className={styles.adoptButton}>Adopt Me</button>
+         </footer>
 
 
-        </>
+        </article>
     )}
 
 </>

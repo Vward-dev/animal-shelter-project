@@ -1,8 +1,13 @@
 import axios from "axios";
 
 const http= axios.create({
-    baseURL: 'http://localhost:9000/'});
+    baseURL: 'http://localhost:9000/',
+    headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+    }
+});
 
+    
 export default {
 
     getAllVolunteers(){
@@ -14,7 +19,7 @@ export default {
     },
 
     addVolunteer(volunteer){
-        return axios.post('volunteer', volunteer)
+        return http.post('volunteer', volunteer)
 
     },
 

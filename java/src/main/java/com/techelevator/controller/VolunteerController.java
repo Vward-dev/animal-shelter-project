@@ -1,10 +1,13 @@
 package com.techelevator.controller;
 
 import com.techelevator.Service.VolunteerService;
+import com.techelevator.dao.UserDao;
+import com.techelevator.model.User;
 import com.techelevator.model.Volunteer;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +17,11 @@ import java.util.List;
 public class VolunteerController {
 
     private VolunteerService volunteerService;
+    private UserDao userDao;
 
-    public VolunteerController(VolunteerService volunteerService) {
+    public VolunteerController(VolunteerService volunteerService, UserDao userDao) {
         this.volunteerService = volunteerService;
+        this.userDao = userDao;
     }
 
     @RequestMapping( method = RequestMethod.GET)
@@ -39,6 +44,12 @@ public class VolunteerController {
 
     @RequestMapping( method = RequestMethod.POST)
     public Volunteer createVolunteer(@Valid @RequestBody Volunteer newVolunteer) {
+
+
+//        User user = userDao.getUserByUsername(principal.getName());
+//
+//        newVolunteer.setUserId(user.getId());
+
         Volunteer volunteer = null;
 
         volunteer = volunteerService.createVolunteer(newVolunteer);

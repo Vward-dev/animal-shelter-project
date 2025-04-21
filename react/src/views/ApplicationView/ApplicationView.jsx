@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 //import { useNotification } from '../../hooks/useNotification';
 import VolunteerService from '../../services/VolunteerService';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 export default function AddEditApplicationForm({
     volunteer,
@@ -14,6 +16,8 @@ export default function AddEditApplicationForm({
     const [emailAddress, setEmailAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [bioDescription, setBioDescription] = useState("");
+    const user = useContext(UserContext);
+    const [showApplicationForm, setShowApplicationForm] = useState(true);
 
 
     function initializeForm() {
@@ -25,42 +29,35 @@ export default function AddEditApplicationForm({
     }
 
     function handleSubmit(event) {
-        event.preventDefault();
-        const volunteer = {
-            first_name: firstName,
-            last_name: lastName,
-            email: emailAddress,
-            phone: phoneNumber,
-            bio_desc: bioDescription,
-            vounteer_status_id: 1,
-            admin_status: false,
-        
-        }
+        if (!user) {
+            alert("Please log in to submit your application.");
+        } else {
+            event.preventDefault();
+            const volunteer = {
+                userId: user.id,
+                firstName: firstName,
+                lastName: lastName,
+                email: emailAddress,
+                phoneNumber: phoneNumber,
+                bioDescription: bioDescription,
+                statusId: 1,
+                adminStatus: false,
 
-    // navigate('/applications');
-
-    VolunteerService.addVolunteer(volunteer)
-        .then(() => {
-            closeHandler();
-            successHandler();
-            
-        })
-
-        .catch((error) => {
-            const response = error.response;
-            if (response.status === 401) {
-                setNotification({ type: 'error', message: 'Session expired.', });
-                navigate('/logout');
-            } else {
-                const message = error.response?.mesage || error.message;
-                console.error('Error updating the volunteer:', message);
-                setNotification({
-                    type: 'error',
-                    message: 'Error creating the volunteer',
-                });
             }
 
-        }); }
+            // navigate('/applications');
+
+            VolunteerService.addVolunteer(volunteer)
+                .then(() => {
+                    setShowApplicationForm(false);
+                })
+                .catch((error) => {
+                    const response = error.response;
+                    alert('There was an error submitting your application. Please try again later.');
+
+                });
+        }
+    }
 
 
 
@@ -72,7 +69,7 @@ export default function AddEditApplicationForm({
 
     return (
         <>
-            <div>
+            {showApplicationForm ? (<div>
                 <h2> Volunteer Application Form</h2>
 
                 <form onSubmit={handleSubmit}>
@@ -89,7 +86,7 @@ export default function AddEditApplicationForm({
                         <input
                             type="text"
                             id="last_name"
-                            
+
                             onChange={(e) => setLastName(e.target.value)}
                         /> </div>
                     <div>
@@ -97,7 +94,7 @@ export default function AddEditApplicationForm({
                         <input
                             type="email"
                             id="email"
-                            
+
                             onChange={(e) => setEmailAddress(e.target.value)}
                         />
                     </div>
@@ -106,14 +103,14 @@ export default function AddEditApplicationForm({
                         <input
                             type="text"
                             id="phone"
-                            
+
                             onChange={(e) => setPhoneNumber(e.target.value)}
                         /> </div>
                     <div>
                         <label htmlFor="bio_description">Bio:</label>
                         <textarea
                             id="bio_description"
-                            
+
                             onChange={(e) => setBioDescription(e.target.value)}
                         /> </div>
 
@@ -122,7 +119,11 @@ export default function AddEditApplicationForm({
 
                     </div>
                 </form>
-            </div>
+            </div>) :
+                (<div>
+                    <h2>Application Submitted</h2>
+                </div>)
+            }
 
         </>
 

@@ -69,14 +69,22 @@ export default function App() {
               <Route path="/login" element={<LoginView onLogin={handleLogin} />} />
               <Route path="/logout" element={<LogoutView onLogout={handleLogout} />} />
               <Route path="/register" element={<RegisterView />} />
-              <Route path="/pets" element= { <PetView /> } />
-              <Route path="/volunteer" element={<VolunteerView />} ></Route>
-              <Route path="/application" element={<ApplicationView />} />
-              
+              <Route path="/pets" element={<PetView />} />
+              <Route
+                path="/volunteer"
+                element={<ProtectedRoute requiredRole={["ROLE_USER"]} >
+                  <VolunteerView />
+                </ProtectedRoute>} />
+
+              <Route 
+              path="/application" 
+              element={<ProtectedRoute requiredRole={["ROLE_USER"]}>
+                <ApplicationView /> </ProtectedRoute>} />
+
               <Route
                 path="/userProfile"
                 element={
-                  <ProtectedRoute>
+                  <ProtectedRoute requiredRole={["ROLE_USER",  "ROLE_ADMIN"]}>
                     <UserProfileView />
                   </ProtectedRoute>
                 }

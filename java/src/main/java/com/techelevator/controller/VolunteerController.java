@@ -5,6 +5,7 @@ import com.techelevator.dao.UserDao;
 import com.techelevator.model.User;
 import com.techelevator.model.Volunteer;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@PreAuthorize("isAuthenticated()")
 @RequestMapping( path = "/volunteer")
 public class VolunteerController {
 
@@ -23,7 +25,7 @@ public class VolunteerController {
         this.volunteerService = volunteerService;
         this.userDao = userDao;
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping( method = RequestMethod.GET)
     public List<Volunteer> getVolunteers() {
 

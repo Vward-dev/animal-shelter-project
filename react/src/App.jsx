@@ -72,21 +72,21 @@ export default function App() {
               <Route path="/pets" element={<PetView />} />
               <Route
                 path="/volunteer"
-                element={<ProtectedRoute requiredRole={["ROLE_USER"]} >
+                element={
                   <VolunteerView />
-                </ProtectedRoute>} />
+                } />
 
-              <Route 
-              path="/application" 
-              element={<ProtectedRoute requiredRole={["ROLE_USER"]}>
-                <ApplicationView /> </ProtectedRoute>} />
+              <Route
+                path="/application"
+                element={
+                  <ApplicationView />} />
 
               <Route
                 path="/userProfile"
                 element={
-                  <ProtectedRoute requiredRole={["ROLE_USER",  "ROLE_ADMIN"]}>
-                    <UserProfileView />
-                  </ProtectedRoute>
+
+                  <UserProfileView />
+
                 }
               />
             </Routes>

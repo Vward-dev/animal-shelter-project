@@ -14,6 +14,7 @@ import AppHeader from './components/AppHeader/AppHeader';
 import axios from 'axios';
 import PetView from './views/PetView/PetView';
 import VolunteerView from './views/VolunteerView/VolunteerView';
+import ApplicationView from './views/ApplicationView/ApplicationView';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -70,6 +71,8 @@ export default function App() {
               <Route path="/register" element={<RegisterView />} />
               <Route path="/pets" element= { <PetView /> } />
               <Route path="/volunteer" element={<VolunteerView />} ></Route>
+              <Route path="/application" element={<ApplicationView />} />
+              
               <Route
                 path="/userProfile"
                 element={

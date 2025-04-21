@@ -39,9 +39,13 @@ export default function MainNav() {
             Login
           </NavLink>
         </div>
-      
         
       )}
+      <div className="nav-link">
+        <NavLink to="/application">
+          Join Us
+        </NavLink>
+      </div>
     </nav>
   );
 }

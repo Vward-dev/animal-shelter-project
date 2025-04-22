@@ -39,4 +39,12 @@ public class VolunteerService {
     public List<Volunteer> getPendingVolunteers() {
         return volunteerDao.getPendingVolunteers();
     }
+
+    public Volunteer approveVolunteer(Volunteer volunteer) {
+        return volunteerDao.approveVolunteer(volunteer);
+    }
+
+    public Volunteer denyVolunteer(Volunteer volunteer) {
+        return volunteerDao.denyVolunteer(volunteer);
+    }
 }

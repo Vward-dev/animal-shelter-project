@@ -33,7 +33,15 @@ export default {
 
     getPendingVolunteers(){
         return http.get(`volunteer/pending`)
-    }
+    },
+
+    approveVolunteer(volunteer){
+        return http.put(`volunteer/approve/${volunteer.id}`, volunteer)
+    },
+
+    denyVolunteer(volunteer){
+        return http.put(`volunteer/deny/${volunteer.id}`, volunteer)
+    },
 
 };
 

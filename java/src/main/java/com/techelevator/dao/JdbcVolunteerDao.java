@@ -133,6 +133,46 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return numberOfRows;
     }
 
+    public Volunteer approveVolunteer(Volunteer updatedVolunteer){
+
+        Volunteer newVolunteer = null;
+
+        String sql = "UPDATE volunteer SET volunteer_status_id= 2 WHERE volunteer_id = ?;";
+
+        try {
+            int rowsAffected = jdbcTemplate.update(sql, updatedVolunteer.getId());
+            if (rowsAffected == 0) {
+                throw new DaoException("Zero rows affected, expected at least one");
+            }
+            newVolunteer = getVolunteerById(updatedVolunteer.getId());
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        } catch (DataIntegrityViolationException e) {
+            throw new DaoException("Data integrity violation", e);
+        }
+        return newVolunteer;
+    }
+
+    public Volunteer denyVolunteer(Volunteer updatedVolunteer){
+
+        Volunteer newVolunteer = null;
+
+        String sql = "UPDATE volunteer SET volunteer_status_id= 3 WHERE volunteer_id = ?;";
+
+        try {
+            int rowsAffected = jdbcTemplate.update(sql, updatedVolunteer.getId());
+            if (rowsAffected == 0) {
+                throw new DaoException("Zero rows affected, expected at least one");
+            }
+            newVolunteer = getVolunteerById(updatedVolunteer.getId());
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        } catch (DataIntegrityViolationException e) {
+            throw new DaoException("Data integrity violation", e);
+        }
+        return newVolunteer;
+    }
+
     private Volunteer mapRowToVolunteer(SqlRowSet rowSet) {
         Volunteer volunteer = new Volunteer();
 

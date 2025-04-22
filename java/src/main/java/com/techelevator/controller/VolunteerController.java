@@ -78,6 +78,28 @@ public class VolunteerController {
         return updatedVolunteer;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping( path = "/approve/{id}", method = RequestMethod.PUT)
+    public Volunteer approveVolunteer(@PathVariable int id, @RequestBody Volunteer volunteer) {
+        Volunteer updatedVolunteer = null;
+
+        updatedVolunteer = volunteerService.approveVolunteer(volunteer);
+
+        return updatedVolunteer;
+
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping( path = "/deny/{id}", method = RequestMethod.PUT)
+    public Volunteer denyVolunteer(@PathVariable int id, @RequestBody Volunteer volunteer) {
+        Volunteer updatedVolunteer = null;
+
+        updatedVolunteer = volunteerService.denyVolunteer(volunteer);
+
+        return updatedVolunteer;
+
+    }
+
     @RequestMapping ( path = "/{id}", method = RequestMethod.DELETE )
     public int deleteVolunteerById(@PathVariable int id) {
         int rowsAffected = volunteerService.deleteVolunteerById(id);

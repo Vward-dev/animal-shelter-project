@@ -11,6 +11,7 @@ export default function VolunteerComponent( {volunteer} ) {
             <p>{volunteer.phone}</p>
             <p>{volunteer.bioDescription}</p>
         </div>
+        
     )
 
 }

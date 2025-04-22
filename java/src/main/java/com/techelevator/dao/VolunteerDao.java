@@ -17,6 +17,10 @@ public interface VolunteerDao {
 
     Volunteer updateVolunteer(Volunteer volunteer);
 
+    Volunteer approveVolunteer(Volunteer volunteer);
+
+    Volunteer denyVolunteer(Volunteer volunteer);
+
     int deleteVolunteerById(int id);
 
 

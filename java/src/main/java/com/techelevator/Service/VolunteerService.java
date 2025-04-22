@@ -35,4 +35,8 @@ public class VolunteerService {
     public int deleteVolunteerById(int id) {
         return volunteerDao.deleteVolunteerById(id);
     }
+
+    public List<Volunteer> getPendingVolunteers() {
+        return volunteerDao.getPendingVolunteers();
+    }
 }

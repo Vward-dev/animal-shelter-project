@@ -99,4 +99,5 @@ public class Volunteer {
     public void setStatusId(int statusId) {
         this.statusId = statusId;
     }
+
 }

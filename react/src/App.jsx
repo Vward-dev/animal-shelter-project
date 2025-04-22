@@ -15,6 +15,7 @@ import axios from 'axios';
 import PetView from './views/PetView/PetView';
 import VolunteerView from './views/VolunteerView/VolunteerView';
 import ApplicationView from './views/ApplicationView/ApplicationView';
+import PendingApplication from './views/PendingApplications/PendingApplication';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -70,6 +71,7 @@ export default function App() {
               <Route path="/logout" element={<LogoutView onLogout={handleLogout} />} />
               <Route path="/register" element={<RegisterView />} />
               <Route path="/pets" element={<PetView />} />
+              <Route path="/pending" element= {<PendingApplication/>} />
               <Route
                 path="/volunteer"
                 element={

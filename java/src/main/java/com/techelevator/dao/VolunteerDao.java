@@ -9,6 +9,8 @@ public interface VolunteerDao {
 
     List<Volunteer> getVolunteers();
 
+    List<Volunteer> getPendingVolunteers();
+
     Volunteer getVolunteerById(int id);
 
     Volunteer createVolunteer(Volunteer volunteer);
@@ -16,4 +18,6 @@ public interface VolunteerDao {
     Volunteer updateVolunteer(Volunteer volunteer);
 
     int deleteVolunteerById(int id);
+
+
 }

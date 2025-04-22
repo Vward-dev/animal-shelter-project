@@ -57,6 +57,25 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return volunteer;
     }
 
+    public  List<Volunteer> getPendingVolunteers() {
+        List<Volunteer> volunteers = new ArrayList<>();
+        // Query
+        String sql = "SELECT * FROM volunteer WHERE volunteer_status_id = 1";
+        try {
+            //
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while (results.next()) {
+                Volunteer volunteer = mapRowToVolunteer(results);
+                volunteers.add(volunteer);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        }
+        return volunteers;
+    }
+
+
+
     public Volunteer createVolunteer(Volunteer volunteer) {
         Volunteer newVolunteer = null;
         //Query

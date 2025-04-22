@@ -35,6 +35,16 @@ public class VolunteerController {
         return volunteers;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(path = "/pending" ,method = RequestMethod.GET)
+    public List<Volunteer> getPendingVolunteers() {
+
+        List<Volunteer> volunteers = new ArrayList<>();
+        volunteers = volunteerService.getPendingVolunteers();
+
+        return volunteers;
+    }
+
     @RequestMapping ( path = "/{id}", method = RequestMethod.GET )
     public Volunteer getVolunteerById(@PathVariable int id){
         Volunteer volunteer = null;

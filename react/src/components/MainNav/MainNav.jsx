@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
-import styles from './MainNav.module.css'; 
+import styles from './MainNav.module.css';
 
 
 export default function MainNav() {
@@ -12,16 +12,28 @@ export default function MainNav() {
       <div className="nav-link">
         <NavLink to="/">Home</NavLink>
       </div>
-      <div className = "nav-link">
-        <NavLink to= "/pets">
+      <div className="nav-link">
+        <NavLink to="/pets">
           Pets
         </NavLink>
       </div>
-      <div className ="nav-link">
-        <NavLink to="/volunteer"> Volunteers</NavLink>
-      </div>
+
+
       {user ? (
         <>
+          <div className="nav-link">
+            <NavLink to="/volunteer"> Volunteers</NavLink>
+          </div>
+          <div className="nav-link">
+            <NavLink to="/application">
+              Join Us
+            </NavLink>
+          </div>
+          <div className="nav-link">
+            <NavLink  to="/pending">
+               Pending Applications
+               </NavLink>
+          </div>
           <div className="nav-link">
             <NavLink to="/userProfile">
               Profile
@@ -39,13 +51,9 @@ export default function MainNav() {
             Login
           </NavLink>
         </div>
-        
+
       )}
-      <div className="nav-link">
-        <NavLink to="/application">
-          Join Us
-        </NavLink>
-      </div>
+
     </nav>
   );
 }

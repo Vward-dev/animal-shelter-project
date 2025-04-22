@@ -29,6 +29,10 @@ export default {
 
     deleteVolunteer(id){
         return http.delete(`volunteer/${id}`)
+    },
+
+    getPendingVolunteers(){
+        return http.get(`volunteer/pending`)
     }
 
 };

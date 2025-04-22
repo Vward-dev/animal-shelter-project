@@ -4,11 +4,19 @@ import styles from './PetComponent.module.css';
 import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
 
-export default function PetComponent() {
-    
+export default function PetComponent( {pet} ) {
+    let petNameClass = styles.petName;
+    if (pet.species === 'Dog'){
+        petNameClass += ` ${styles.dogName}`;
+    }else if(pet.species === 'Cat') {
+        petNameClass +=  ` ${styles.catName}`;
+    }
+
+   
+
 
 const [errorMessage, setErrorMessage] = useState('');
- const [pet, setPet] = useState([]);
+// const [pet, setPet] = useState([]);
 const [isLoading, setIsLoading] = useState(false);
 
 function getPet() {
@@ -32,9 +40,9 @@ function getPet() {
     })
 }
 
- useEffect(()=> {
-     getPet();
- },[]);
+ //useEffect(()=> {
+   //  getPet();
+ //},[]);
 
 return (
 

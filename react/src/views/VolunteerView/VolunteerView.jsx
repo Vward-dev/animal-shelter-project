@@ -16,9 +16,11 @@ export default function VolunteerView() {
         })
         .catch ((error) => {
             if (error.response) {
-                setErrorMessage(`Received an error message from the server: ${error.response.status}`);
+               // setErrorMessage(`Received an error message from the server: ${error.response.status}`);
+               alert( "You do not have authorization to view this page");
             } else if (error.request){
                 setErrorMessage('No response from the server')
+                
             } else {
                 setErrorMessage('An error occurred while creating request');
             }

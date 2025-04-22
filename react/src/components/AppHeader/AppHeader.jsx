@@ -7,8 +7,9 @@ export default function AppHeader({title,logo}) {
         <>
             <header id='app-head' className={styles.headerGrid}>
                 
-                    <h3 className={styles.logo}>{logo}</h3>
-                    <h1 className={styles.title}>{title}</h1>
+                    
+                    <img className='logo' src="src\assets\images\Gimme shelter (4).png" alt="" />
+                    
                 
             </header>
         </>

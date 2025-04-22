@@ -26,7 +26,7 @@ export default function PetView() {
     }
 
     useEffect(() => {
-        getPet();
+       getPet();
     }, [])
 
     return (

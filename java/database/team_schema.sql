@@ -26,7 +26,7 @@ CREATE TABLE pet (
 	description text NOT NULL,
 	breed varchar(200),
 	adoption_status_id int NOT NULL,
-	photo varchar(200) NOT NULL,
+	photo varchar(100000) NOT NULL,
 	
 	CONSTRAINT PK_pet PRIMARY KEY (id),
 	CONSTRAINT FK_pet FOREIGN KEY (adoption_status_id) REFERENCES adoption_status (adoption_status_id)

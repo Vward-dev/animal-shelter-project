@@ -137,10 +137,11 @@ public class JdbcVolunteerDao implements VolunteerDao{
 
         Volunteer newVolunteer = null;
 
-        String sql = "UPDATE volunteer SET volunteer_status_id= 2 WHERE volunteer_id = ?;";
+        String sql = "UPDATE volunteer SET volunteer_status_id= 2 WHERE volunteer_id = ?;" +
+                "UPDATE users SET role= 'ROLE_VOLUNTEER' WHERE user_id = ?;";
 
         try {
-            int rowsAffected = jdbcTemplate.update(sql, updatedVolunteer.getId());
+            int rowsAffected = jdbcTemplate.update(sql, updatedVolunteer.getId(), updatedVolunteer.getUserId());
             if (rowsAffected == 0) {
                 throw new DaoException("Zero rows affected, expected at least one");
             }

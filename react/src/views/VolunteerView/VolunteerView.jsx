@@ -39,7 +39,10 @@ export default function VolunteerView() {
         <h1>Our Volunteers!</h1>
 
         {volunteer.map((volunteer) => (
-            <VolunteerComponent volunteer = {volunteer}></VolunteerComponent>
+            volunteer.statusId === 2 && (
+                <VolunteerComponent volunteer = {volunteer}></VolunteerComponent>
+            )
+            
         ))}
         </>
 

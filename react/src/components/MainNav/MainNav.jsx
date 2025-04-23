@@ -17,22 +17,34 @@ export default function MainNav({}) {
       <div className="nav-link">
         <NavLink to="/pets">Pets</NavLink>
       </div>
+      {user && user.authorities[0].name === "ROLE_ADMIN" && (
+        <div className="nav-link">
+        <NavLink  to="/pending">
+           Pending Applications
+           </NavLink>
+      </div>
+        )}
+
+      {user && (user.authorities[0].name === "ROLE_VOLUNTEER" || user.authorities[0].name === "ROLE_ADMIN") && (
+        <>
+        <div className="nav-link">
+        <NavLink to="/addpet">Add a Pet</NavLink>
+      </div>
+      <div className="nav-link">
+        <NavLink to="/volunteer"> Volunteers</NavLink>
+      </div>
+      </>
+      )}
 
       {user ? (
         <>
-          <div className="nav-link">
-            <NavLink to="/volunteer"> Volunteers</NavLink>
-          </div>
+          
           <div className="nav-link">
             <NavLink to="/application">
               Join Us
             </NavLink>
           </div>
-          <div className="nav-link">
-            <NavLink  to="/pending">
-               Pending Applications
-               </NavLink>
-          </div>
+          
           <div className="nav-link">
             <NavLink to="/userProfile">
               Profile

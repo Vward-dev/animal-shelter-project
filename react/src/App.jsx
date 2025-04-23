@@ -16,6 +16,7 @@ import PetView from './views/PetView/PetView';
 import VolunteerView from './views/VolunteerView/VolunteerView';
 import ApplicationView from './views/ApplicationView/ApplicationView';
 import PendingApplication from './views/PendingApplications/PendingApplication';
+import AddPetView from './views/AddPetView/AddPetView';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -79,6 +80,7 @@ export default function App() {
               <Route path="/register" element={<RegisterView />} />
               <Route path="/pets" element={<PetView />} />
               <Route path="/pending" element= {<PendingApplication/>} />
+              <Route path="/addpet" element={<AddPetView />} />
               <Route
                 path="/volunteer"
                 element={

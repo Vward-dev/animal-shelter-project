@@ -19,9 +19,11 @@ import PendingApplication from './views/PendingApplications/PendingApplication';
 
 export default function App() {
   const [user, setUser] = useState(null);
+  //const [loading, setLoading] = useState(true);
 
   function handleLogin(userData) {
     setUser(userData);
+   // setLoading(false); 
   }
 
   function handleLogout() {
@@ -34,6 +36,7 @@ export default function App() {
 
     // Clear the auth context
     setUser(null);
+    //setLoading(false); 
   }
 
   // When a user comes back to the app or refreshes the page, check for user/token in local storage and validate it
@@ -55,15 +58,19 @@ export default function App() {
           // Token is not valid, act lke user just logged out
           handleLogout();
         });
-    }
-  }, []);
-
+      }
+      }, []);
+      
+  
   return (
     <BrowserRouter>
       <div id="app">
         <UserContext.Provider value={user}>
           <AppHeader title="Gimme Shelter" logo="logo" />
-          <MainNav />
+
+          < MainNav/>
+         
+
           <main id="main-content">
             <Routes>
               <Route path="/" element={<HomeView />} />

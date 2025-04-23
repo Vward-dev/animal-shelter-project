@@ -4,8 +4,10 @@ import { UserContext } from '../../context/UserContext';
 import styles from './MainNav.module.css';
 
 
-export default function MainNav() {
+export default function MainNav({}) {  
   const user = useContext(UserContext);
+
+ 
 
   return (
     <nav id="main-nav" className={styles.navList}>
@@ -13,11 +15,8 @@ export default function MainNav() {
         <NavLink to="/">Home</NavLink>
       </div>
       <div className="nav-link">
-        <NavLink to="/pets">
-          Pets
-        </NavLink>
+        <NavLink to="/pets">Pets</NavLink>
       </div>
-
 
       {user ? (
         <>

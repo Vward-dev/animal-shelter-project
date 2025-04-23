@@ -6,7 +6,7 @@
     margin: 16px;
     padding: 16px;
     
-    background-color: black;
+    background-color: fuchsia;
 
 }
 .pet-details {
@@ -26,6 +26,48 @@ margin-bottom: 4px;
 margin-bottom: 12px;
 
 }
+
+.adopt-button {
+    background-color: white;
+    color: black;
+    border: 3px solid #ccc;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+  }
+  
+  .adopt-button::before,
+  .adopt-button::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem; /* Increased width for more overlap */
+    height: 2.5rem; /* Increased height for more overlap */
+    background-color: white;
+    border: 3px solid #ccc;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+  
+  .adopt-button::before {
+    left: -1.25rem; /* Increased negative value for more overlap */
+  }
+  
+  .adopt-button::after {
+    right: -1.25rem; /* Increased negative value for more overlap */
+  }
+  
+  .adopt-button:hover {
+    background-color: fuchsia;
+    border-color: yellow;
+    color: white;
+  }
 
 .dog-name{
     background-color: red;
@@ -50,7 +92,7 @@ margin-bottom: 12px;
 }
 .pet-image{
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 8px;
     margin-top: 12px ;
     margin-bottom: 12px;

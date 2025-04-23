@@ -3,7 +3,7 @@ import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
 import PetComponent from '../../components/PetComponent/PetComponent';
 import SearchBox from '../../components/SearchBox/SearchBox';
-
+import styles from '../../views/PetView/PetView.module.css'
 export default function PetView() {
 
     const [errorMessage, setErrorMessage] = useState('');
@@ -59,7 +59,7 @@ export default function PetView() {
                 <h1>Pets For Adoption</h1>
                 <SearchBox searchFunction={getPet} />
             </header>
-            <div>
+            <div className={styles.PetCardsDisplay}>
                 {pet.map((pet) => (
                     <PetComponent pet={pet}></PetComponent>
                 ))}

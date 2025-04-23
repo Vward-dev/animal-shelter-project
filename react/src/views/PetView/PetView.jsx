@@ -3,7 +3,8 @@ import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
 import PetComponent from '../../components/PetComponent/PetComponent';
 import SearchBox from '../../components/SearchBox/SearchBox';
-import styles from '../../views/PetView/PetView.module.css'
+import styles from './PetView.module.css'
+
 export default function PetView() {
 
     const [errorMessage, setErrorMessage] = useState('');

@@ -6,7 +6,7 @@
     margin: 16px;
     padding: 16px;
     
-    background-color: fuchsia;
+    background-color:black;
 
 }
 .pet-details {
@@ -27,49 +27,61 @@ margin-bottom: 12px;
 
 }
 
-.adopt-button {
-    background-color: white;
-    color: black;
-    border: 3px solid #ccc;
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    overflow: hidden;
-  }
-  
-  .adopt-button::before,
-  .adopt-button::after {
-    content: '';
-    position: absolute;
-    width: 2.5rem; /* Increased width for more overlap */
-    height: 2.5rem; /* Increased height for more overlap */
-    background-color: white;
-    border: 3px solid #ccc;
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
-  }
-  
-  .adopt-button::before {
-    left: -1.25rem; /* Increased negative value for more overlap */
-  }
-  
-  .adopt-button::after {
-    right: -1.25rem; /* Increased negative value for more overlap */
-  }
-  
-  .adopt-button:hover {
-    background-color: fuchsia;
-    border-color: yellow;
-    color: white;
-  }
+.adopt-button{
+  margin: 20px;
+  position: relative;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.c1, .c2, .c3, .c4{
+  background:#fff;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  position:absolute;
+}
+.c1{
+  left: 0;
+  top: 0;
+}
+.c2{
+  right: 0;
+  top: 0;
+}
+.c3{
+  left: 0;
+  bottom: 0;
+}
+.c4{
+  bottom: 0;
+  right: 0;
+}
+.b1 {
+  background:#fff;
+  height: 30px;
+  width: 120px;
+  position:absolute;  
+  left: 15px;
+  top: 15px;
+}
+.b2 {
+  background-color: #fff;
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 90px;
+  height: 30px;
+  line-height: 30px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
 
-.dog-name{
+/* .dog-name{
     background-color: red;
 }
 .cat-name {
@@ -89,7 +101,7 @@ margin-bottom: 12px;
 }
 .pet-description{
 
-}
+} */
 .pet-image{
     width: 100%;
     height: 100%;

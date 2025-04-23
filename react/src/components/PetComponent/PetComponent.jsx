@@ -78,7 +78,18 @@ export default function PetComponent({ pet }) {
                     <img className={styles.petImage} src={pet.photo} alt={pet.name} />
 
                     <footer>
-                        <button className={styles.adoptButton}>Adopt Me</button>
+                        <button className={styles.adoptButton}>
+                            <div className={styles.c1}></div>
+                            <div className={styles.c2}></div>
+                            <div className={styles.c3}></div>
+                            <div className={styles.c4}></div>
+                            <div className={styles.b1}>
+                                <div className={styles.b2}>
+                                    Adopt Me
+                                </div>
+                            </div>
+
+                        </button>
                     </footer>
 
 

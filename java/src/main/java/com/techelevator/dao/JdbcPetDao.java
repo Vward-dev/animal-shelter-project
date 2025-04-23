@@ -58,6 +58,28 @@ public class JdbcPetDao implements PetDao{
             return pets;
         }
 
+        public List<Pet> filterPets(String searchTerm, boolean useWildCard) {
+
+            List<Pet> pets = new ArrayList<>();
+
+            String sql = "SELECT * FROM pet WHERE name ILIKE ? OR species ILIKE ? " +
+                    "OR sex ILIKE ? OR breed ILIKE ?;";
+
+            if(useWildCard){
+                searchTerm = '%' + searchTerm + '%';
+            }
+            try{
+                SqlRowSet results = jdbcTemplate.queryForRowSet(sql, searchTerm, searchTerm, searchTerm, searchTerm);
+                while (results.next()){
+                    Pet pet = mapRowToPet(results);
+                    pets.add(pet);
+                }
+            }catch (CannotGetJdbcConnectionException e) {
+                throw new DaoException("Unable to connect to server or database", e);
+            }
+            return pets;
+        }
+
 
         public Pet createPet(Pet pet){
 

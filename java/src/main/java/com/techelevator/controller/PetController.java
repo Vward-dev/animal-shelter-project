@@ -2,9 +2,12 @@ package com.techelevator.controller;
 
 
 import com.techelevator.Service.PetService;
+import com.techelevator.exception.DaoException;
 import com.techelevator.model.Pet;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,10 +25,20 @@ public class PetController {
     }
 
     @RequestMapping( method = RequestMethod.GET)
-    public List<Pet> getPets() {
+    public List<Pet> getPets(@RequestParam(defaultValue = "") String search) {
 
         List<Pet> pets = new ArrayList<>();
-        pets = petService.getPets();
+
+        try{
+            if(search != null){
+                pets = petService.filterPets(search);
+            }else{
+                pets = petService.getPets();
+            }
+        }catch (DaoException e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+
 
         return pets;
     }

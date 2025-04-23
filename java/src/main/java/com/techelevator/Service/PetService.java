@@ -24,6 +24,10 @@ public class PetService {
         return petDao.getPets();
      }
 
+     public List<Pet> filterPets(String filterString){
+        return petDao.filterPets(filterString, true);
+     }
+
      public Pet getPetById(int id){
         return petDao.getPetById(id);
      }

@@ -9,6 +9,7 @@ public interface PetDao {
     List<Pet> getPets();
 
     Pet getPetById(int id);
+    List<Pet> filterPets(String searchTerm, boolean useWildCard);
 
     Pet createPet(Pet pet);
 

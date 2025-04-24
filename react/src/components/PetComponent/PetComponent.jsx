@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './PetComponent.module.css';
 
 import PetService from '../../services/PetService';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default function PetComponent({ pet }) {
     let petNameClass = styles.petName;
@@ -90,6 +90,8 @@ export default function PetComponent({ pet }) {
                             </div>
 
                         </button>
+                        <Link to={`pet/${pet.id}`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
+                        
                         
                     </foot>
 

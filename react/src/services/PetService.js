@@ -21,7 +21,11 @@ export default {
 
     createPet(pet) {
         return http.post('pet', pet)
-    }
+    },
+
+    updatePetListing(pet) {
+        return http.put(`pet/${pet.id}`, pet)
+    },
 
 
 

@@ -44,6 +44,8 @@ export default function PetView() {
     //         })
     // }
 
+   
+
     useEffect(() => {
         getPet();
         //getPetById();
@@ -58,6 +60,7 @@ export default function PetView() {
                 <h1>Pets For Adoption</h1>
                 <SearchBox searchFunction={getPet} />
             </header>
+
 
 
          

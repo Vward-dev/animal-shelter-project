@@ -52,20 +52,25 @@ export default function PetView() {
     return (
 
         <>
-            <div>
-
-            </div>
-            <div>{errorMessage}</div>
-            <header>
+            
+            <div className={styles.PetsSearchBar}>{errorMessage}</div>
+            <header className={styles.PetHeader}>
                 <h1>Pets For Adoption</h1>
                 <SearchBox searchFunction={getPet} />
             </header>
-            <div className={styles.PetCardsDisplay}>
-                {pet.map((pet) => (
-                    <PetComponent pet={pet}></PetComponent>
-                ))}
-            </div>
 
+
+         
+            <section className={styles.PetDisplayContainer}>
+            
+                <div className={styles.test1}>
+                {pet.map((pet) => (
+                    <PetComponent pet={pet} key={pet.id}></PetComponent>
+                ))}
+                </div>
+            
+            </section>
+           
         </>
 
     )

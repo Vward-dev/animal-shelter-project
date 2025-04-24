@@ -1,5 +1,21 @@
-.pet-cards-display{
+
+.pet-display-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    
+}
+.test1{
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+}
 
+
+
+
+.pet-cards-display{
+    
+}
+
+.pet-search-bar{
+   
 }

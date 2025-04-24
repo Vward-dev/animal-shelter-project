@@ -1,23 +1,26 @@
 .pet-component {
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid #efaa9c;;
     border-radius: 8px;
     margin: 16px;
     padding: 16px;
+    background-color:#503530;
     
-    background-color:black;
-
-}
+    max-width: 300px; 
+ }
 .pet-details {
 display: flex;
 flex-wrap: wrap;
+margin-bottom: 4px;
+
 
 margin-bottom: 4px;
 }
 .pet-details p {
     flex: 1 1 50%;
     margin: 4px 0;
+    font-size: 0.9em;
 }
 .pet-name{
     display: flex;

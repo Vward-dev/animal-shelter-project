@@ -1,9 +1,9 @@
 .header-grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: rgb(169, 208, 243);
-    align-items: baseline;
     
+    align-items: baseline;
+    justify-content: flex-start;
 }
 
 .logo {

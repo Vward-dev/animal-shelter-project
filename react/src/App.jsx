@@ -18,6 +18,7 @@ import ApplicationView from './views/ApplicationView/ApplicationView';
 import PendingApplication from './views/PendingApplications/PendingApplication';
 import AddPetView from './views/AddPetView/AddPetView';
 import UpdatePetListing from './views/UpdatePetView/UpdatePetView';
+import AppFooter from './components/AppFooter/AppFooter';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -104,6 +105,7 @@ export default function App() {
               />
             </Routes>
           </main>
+          <AppFooter />
         </UserContext.Provider>
       </div>
     </BrowserRouter>

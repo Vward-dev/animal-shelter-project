@@ -217,3 +217,9 @@ tr {
 tr:nth-child(even) {
     background-color: rgba(136, 193, 231, 0.3);
 }
+
+#petList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}

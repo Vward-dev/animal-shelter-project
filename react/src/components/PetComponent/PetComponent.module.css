@@ -3,11 +3,14 @@
     flex-direction: column;
     border: 1px solid #efaa9c;;
     border-radius: 8px;
-    margin: 16px;
+    margin: 8px;
     padding: 16px;
     background-color:#503530;
-    
     max-width: 300px; 
+
+    /* expanding pet image upon adoption hover experiment  */
+    position:relative;
+    overflow: hidden;
  }
 .pet-details {
 display: flex;
@@ -15,18 +18,35 @@ flex-wrap: wrap;
 margin-bottom: 4px;
 
 
-margin-bottom: 4px;
 }
 .pet-details p {
     flex: 1 1 50%;
     margin: 4px 0;
     font-size: 0.9em;
+    width: 100%;
 }
 .pet-name{
     display: flex;
     justify-content: center;
     padding: 8px;
 margin-bottom: 12px;
+position: relative;
+z-index: 2;
+
+
+}
+.pet-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  margin-top: 12px ;
+  margin-bottom: 12px;
+  object-fit: cover;
+  max-height: fit-content;
+
+  /* expanding pet image upon adoption hover experiment  */
+  transition: transform 0.5s ease-in-out;
+
 
 }
 
@@ -35,10 +55,28 @@ margin-bottom: 12px;
   position: relative;
   width: 150px;
   height: 60px;
+  
   cursor: pointer;
   background: transparent;
   border: none;
+
+   /* expanding pet image upon adoption hover experiment  */
+  z-index: 3;
+  align-items: center;
+  
+  
+  
+  
 }
+.pet-component:has(.adopt-button:hover) .pet-image {
+  transform: scale(2.0);
+}
+.pet-component:has(.adopt-button:hover) .pet-name {
+  background-color: transparent;
+}
+
+ 
+
 .c1, .c2, .c3, .c4{
   background:#fff;
   height: 30px;
@@ -105,19 +143,11 @@ margin-bottom: 12px;
 .pet-description{
 
 } */
-.pet-image{
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    margin-top: 12px ;
-    margin-bottom: 12px;
-    object-fit: cover;
-    max-height: fit-content;
 
-}
 footer {
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 

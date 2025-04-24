@@ -77,7 +77,7 @@ export default function PetComponent({ pet }) {
 
                     <img className={styles.petImage} src={pet.photo} alt={pet.name} />
 
-                    <footer>
+                    <foot>
                         <button className={styles.adoptButton}>
                             <div className={styles.c1}></div>
                             <div className={styles.c2}></div>
@@ -90,7 +90,8 @@ export default function PetComponent({ pet }) {
                             </div>
 
                         </button>
-                    </footer>
+                        
+                    </foot>
 
 
                 </article>

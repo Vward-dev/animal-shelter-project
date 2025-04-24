@@ -1,21 +1,19 @@
+.pet-view-container{
 
-.pet-display-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    
 }
-.test1{
+
+.pet-card-grid {
     display: flex;
-    grid-template-columns: 1fr 1fr;
-}
-
-
-
-
-.pet-cards-display{
     
+    gap: 16px;
 }
 
-.pet-search-bar{
-   
+.pet-header{
+    display: grid;
+    justify-content: center;
+
 }
+.pets-search-bar{
+
+}
+

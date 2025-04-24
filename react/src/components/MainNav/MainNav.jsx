@@ -11,6 +11,9 @@ export default function MainNav({}) {
 
   return (
     <nav id="main-nav" className={styles.navList}>
+
+    
+
       <div className="nav-link">
         <NavLink to="/">Home</NavLink>
       </div>

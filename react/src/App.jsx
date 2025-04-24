@@ -72,7 +72,7 @@ export default function App() {
           < MainNav/>
          
 
-          <main id="main-content">
+          <main id="main-content" >
             <Routes>
               <Route path="/" element={<HomeView />} />
               <Route path="/login" element={<LoginView onLogin={handleLogin} />} />

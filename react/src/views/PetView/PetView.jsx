@@ -51,7 +51,7 @@ export default function PetView() {
 
     return (
 
-        <>
+        <div className={styles.petViewContainer}>
             
             <div className={styles.PetsSearchBar}>{errorMessage}</div>
             <header className={styles.PetHeader}>
@@ -61,17 +61,14 @@ export default function PetView() {
 
 
          
-            <section className={styles.PetDisplayContainer}>
-            
-                <div className={styles.test1}>
+            <div className={styles.PetCardGrid}>
                 {pet.map((pet) => (
-                    <PetComponent pet={pet} key={pet.id}></PetComponent>
+                    <PetComponent pet={pet} ></PetComponent>
                 ))}
-                </div>
-            
-            </section>
+                       
+            </div>
            
-        </>
+        </div>
 
     )
 

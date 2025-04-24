@@ -1,0 +1,9 @@
+#search-div {
+    display : flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+#input {
+    background-color: antiquewhite;
+}

@@ -119,8 +119,8 @@ main {
 }
 
 a.active {
-    background-color: rgb(205, 205, 205);
-    color: #503530;
+    background-color: #503530;
+    color: #efaa9c;
     font-weight: bolder;
     font-size: larger;
 }

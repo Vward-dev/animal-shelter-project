@@ -51,6 +51,7 @@ z-index: 2;
 }
 
 .adopt-button{
+  padding-left: 40px;
   margin: 20px;
   position: relative;
   width: 150px;
@@ -62,7 +63,7 @@ z-index: 2;
 
    /* expanding pet image upon adoption hover experiment  */
   z-index: 3;
-  align-items: center;
+  
   
   
   

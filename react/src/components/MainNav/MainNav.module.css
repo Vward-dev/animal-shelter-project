@@ -9,3 +9,7 @@
     text-align: right;
    
 }
+
+.nav-link:hover {
+    background-color: #503530;
+}

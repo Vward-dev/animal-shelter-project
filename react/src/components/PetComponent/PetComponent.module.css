@@ -53,13 +53,17 @@ background-color: #efaa9c;
 
 }
 
+.update-pet-button{
+
+
+}
+
 .adopt-button{
   padding-left: 40px;
   margin: 20px;
   position: relative;
   width: 150px;
   height: 60px;
-  left: 55px;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -150,8 +154,10 @@ background-color: #efaa9c;
 
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    position: relative;
+    align-content: center;
+    flex-wrap: wrap;
 }
 
 

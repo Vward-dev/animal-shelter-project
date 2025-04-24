@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import VolunteerService from '../../services/VolunteerService';
 import { useParams } from 'react-router-dom';
 import VolunteerComponent from '../../components/VolunteerComponent/VolunteerComponent';
-
+import styles from './VolunteerView.module.css';
 
 export default function VolunteerView() {
 
@@ -38,12 +38,14 @@ export default function VolunteerView() {
         <div>{errorMessage}</div>
         <h1>Our Volunteers!</h1>
 
+        <div className={styles.volunteerContainer}>
         {volunteer.map((volunteer) => (
             volunteer.statusId === 2 && (
                 <VolunteerComponent volunteer = {volunteer}></VolunteerComponent>
             )
             
         ))}
+        </div>
         </>
 
 

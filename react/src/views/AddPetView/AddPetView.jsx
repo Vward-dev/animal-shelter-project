@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PetService from "../../services/PetService";
+import styles from "./AddPetView.module.css";
 
 
 export default function AddPetForm() {
@@ -61,69 +62,70 @@ export default function AddPetForm() {
             {showApplicationForm ? (
                 <div>
                     <h2>Add new pet</h2>
+                    <div className={styles.formContainer}>
+                        <form onSubmit={handleSubmit}>
+                            <div className={styles.inputField}>
+                                <label htmlFor="name">Name: </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="species">Species: </label>
+                                <input
+                                    type="text"
+                                    id="species"
+                                    onChange={(e) => setSpecies(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="age">Age: </label>
+                                <input
+                                    type="text"
+                                    id="age"
+                                    onChange={(e) => setAge(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="sex">Sex: </label>
+                                <input
+                                    type="text"
+                                    id="sex"
+                                    onChange={(e) => setSex(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="description">Description: </label>
+                                <input
+                                    type="text"
+                                    id="description"
+                                    onChange={(e) => setDescription(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="breed">Breed: </label>
+                                <input
+                                    type="text"
+                                    id="breed"
+                                    onChange={(e) => setBreed(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="photo">Photo url: </label>
+                                <input
+                                    type="text"
+                                    id="photo"
+                                    onChange={(e) => setPhoto(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <button type="submit">Submit</button>
 
-                    <form onSubmit={handleSubmit}>
-                        <div>
-                            <label htmlFor="name">Name: </label>
-                            <input
-                                type="text"
-                                id="name"
-                                onChange={(e) => setName(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="species">Species: </label>
-                            <input
-                                type="text"
-                                id="species"
-                                onChange={(e) => setSpecies(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="age">Age: </label>
-                            <input
-                                type="text"
-                                id="age"
-                                onChange={(e) => setAge(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="sex">Sex: </label>
-                            <input
-                                type="text"
-                                id="sex"
-                                onChange={(e) => setSex(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="description">Description: </label>
-                            <input
-                                type="text"
-                                id="description"
-                                onChange={(e) => setDescription(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="breed">Breed: </label>
-                            <input
-                                type="text"
-                                id="breed"
-                                onChange={(e) => setBreed(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="photo">Photo url: </label>
-                            <input
-                                type="text"
-                                id="photo"
-                                onChange={(e) => setPhoto(e.target.value)}
-                            />
-                        </div>
-                        <div>
-                            <button type="submit">Submit</button>
-
-                        </div>
-                    </form>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             ) : (
                 <h2>Pet added successfully!</h2>

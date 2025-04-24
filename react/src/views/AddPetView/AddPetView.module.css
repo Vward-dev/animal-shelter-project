@@ -1,0 +1,18 @@
+input {
+    background-color: antiquewhite;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column ;
+}
+
+label {
+    text-align: left;
+    font-weight: 1000;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-around;;
+}

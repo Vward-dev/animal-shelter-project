@@ -1,0 +1,9 @@
+.volunteer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px
+}
+
+.volunteer h1 {
+    text-align: left;
+}

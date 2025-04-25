@@ -9,7 +9,7 @@ export default function AppHeader({logo}) {
                 
                     
                     <img className={styles.logo} src="src\assets\images\Gimme.png" alt="" />
-                    <h1>Gimme Shelter Adoption</h1>
+                    <h1 id='header-title'>Gimme Shelter Adoption</h1>
                     <div id={styles.socials}>
                     <SocialComponents></SocialComponents>
                     </div>

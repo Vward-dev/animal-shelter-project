@@ -5,6 +5,7 @@ input {
 .input-field {
     display: flex;
     flex-direction: column ;
+    padding : 8px;
 }
 
 label {

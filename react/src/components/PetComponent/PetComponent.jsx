@@ -95,9 +95,7 @@ export default function PetComponent({ pet }) {
                             </button>
                             </Link>
                        
-                        <div>
-                            {/* <Link to={`pet/${pet.id}`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link> */}
-                        </div>
+                      
                         
                     </footer>
 

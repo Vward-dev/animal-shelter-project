@@ -26,7 +26,7 @@ export default function App() {
 
   function handleLogin(userData) {
     setUser(userData);
-   // setLoading(false); 
+    // setLoading(false); 
   }
 
   function handleLogout() {
@@ -61,18 +61,18 @@ export default function App() {
           // Token is not valid, act lke user just logged out
           handleLogout();
         });
-      }
-      }, []);
-      
-  
+    }
+  }, []);
+
+
   return (
     <BrowserRouter>
       <div id="app">
         <UserContext.Provider value={user}>
           <AppHeader title="Gimme Shelter" logo="logo" />
 
-          < MainNav/>
-         
+          < MainNav />
+
 
           <main id="main-content" >
             <Routes>
@@ -81,7 +81,7 @@ export default function App() {
               <Route path="/logout" element={<LogoutView onLogout={handleLogout} />} />
               <Route path="/register" element={<RegisterView />} />
               <Route path="/pets" element={<PetView />} />
-              <Route path="/pending" element= {<PendingApplication/>} />
+              <Route path="/pending" element={<PendingApplication />} />
               <Route path="/addpet" element={<AddPetView />} />
               <Route path="pets/pet/:id" element={<UpdatePetListing />} />
               <Route
@@ -105,7 +105,9 @@ export default function App() {
               />
             </Routes>
           </main>
-          <AppFooter />
+          <footer className='page-wrapper'>
+            <AppFooter />
+          </footer>
         </UserContext.Provider>
       </div>
     </BrowserRouter>

@@ -1,11 +1,11 @@
 
 
 body {
-    font-family: "Indie Flower", "Winky Rough", cursive;
+    font-family: 'Baloo 2', sans-serif;
     font-size: 14px;
-    background-color: #efaa9c ;
+    background-color: #f5c5bb ;
     color:#503530;
-    
+    min-height: 100vh;
 
 }
 
@@ -24,6 +24,7 @@ body::after{
   }
 
 h1 {
+    font-family: 'Indie Flower', 'Winky Rough';
     font-size: 2rem;
     font-weight: bolder;
 }
@@ -61,6 +62,7 @@ main {
 #main-content{
     grid-area: main;
    display: grid;
+   min-height: 100vh;
     
     
   }
@@ -100,7 +102,7 @@ main {
     margin-right: 1rem;
 }
 
-/* #app-footer {
+ #app-footer {
     grid-area: footer;
     background-color: #ffffff;
     border-top: #ffffff 1px solid;
@@ -108,7 +110,7 @@ main {
     text-align: center;
     opacity: 0.7;
     padding: 1rem;
-} */
+} 
 #app-footer {
     display: flex;
     justify-content: space-between;
@@ -278,3 +280,15 @@ tr:nth-child(even) {
     background: #125688;
     color: white;
   }
+
+#main-footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #503530;
+    color: #efaa9c;
+    padding: 2rem 3rem;
+    font-family: 'Baloo 2', sans-serif;
+    flex-wrap: wrap;
+    width: 100%;
+    bottom: 0;
+}

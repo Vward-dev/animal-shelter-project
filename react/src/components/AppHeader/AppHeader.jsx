@@ -15,7 +15,7 @@ export default function AppHeader({logo}) {
                     </div>
                     <div></div>
                     <div></div>
-                    <button>Donate Now!</button>
+                    <button className={styles.donateButton}>Donate Now!</button>
                     
                 
             </header>

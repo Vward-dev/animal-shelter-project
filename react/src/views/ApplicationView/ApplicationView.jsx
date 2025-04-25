@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import VolunteerService from '../../services/VolunteerService';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
+import styles from './ApplicationView.module.css';
 
 export default function AddEditApplicationForm({
     volunteer,
@@ -69,60 +70,65 @@ export default function AddEditApplicationForm({
 
     return (
         <>
-            {showApplicationForm ? (<div>
-                <h2> Volunteer Application Form</h2>
+            {showApplicationForm ? (
+                <div>
+                    <h2> Volunteer Application Form</h2>
+                    <div className={styles.formContainer}>
+                        <form onSubmit={handleSubmit}>
 
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="first_name">First Name: </label>
-                        <input
-                            type="text"
-                            id="first_name"
-                            onChange={(e) => setFirstName(e.target.value)}
-                        />
+                            <div className={styles.inputField}>
+                                <label htmlFor="first_name">First Name: </label>
+                                <input
+                                    type="text"
+                                    id="first_name"
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="last_name">Last Name:</label>
+                                <input
+                                    type="text"
+                                    id="last_name"
+
+                                    onChange={(e) => setLastName(e.target.value)}
+                                /> </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="email">Email:</label>
+                                <input
+                                    type="email"
+                                    id="email"
+
+                                    onChange={(e) => setEmailAddress(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="phone">Phone:</label>
+                                <input
+                                    type="text"
+                                    id="phone"
+
+                                    onChange={(e) => setPhoneNumber(e.target.value)}
+                                /> </div>
+                            <div className={styles.inputField}>
+                                <label htmlFor="bio_description">Bio:</label>
+                                <textarea
+                                    id="bio_description"
+
+                                    onChange={(e) => setBioDescription(e.target.value)}
+                                /> </div>
+
+                            <div>
+                                <button type="submit">Submit</button>
+
+                            </div>
+                        </form>
                     </div>
-                    <div>
-                        <label htmlFor="last_name">Last Name:</label>
-                        <input
-                            type="text"
-                            id="last_name"
-
-                            onChange={(e) => setLastName(e.target.value)}
-                        /> </div>
-                    <div>
-                        <label htmlFor="email">Email:</label>
-                        <input
-                            type="email"
-                            id="email"
-
-                            onChange={(e) => setEmailAddress(e.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="phone">Phone:</label>
-                        <input
-                            type="text"
-                            id="phone"
-
-                            onChange={(e) => setPhoneNumber(e.target.value)}
-                        /> </div>
-                    <div>
-                        <label htmlFor="bio_description">Bio:</label>
-                        <textarea
-                            id="bio_description"
-
-                            onChange={(e) => setBioDescription(e.target.value)}
-                        /> </div>
-
-                    <div>
-                        <button type="submit">Submit</button>
-
-                    </div>
-                </form>
-            </div>) :
-                (<div>
+                </div >
+            ) : (
+                <div>
                     <h2>Application Submitted</h2>
-                </div>)
+                </div>
+            )
             }
 
         </>

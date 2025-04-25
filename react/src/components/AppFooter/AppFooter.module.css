@@ -1,12 +1,4 @@
-.site-footer{
-    display: flex;
-    justify-content: space-between;
-    background-color: #503530;
-    color: #efaa9c;
-    padding: 2rem 3rem;
-    font-family: Arial, Helvetica, sans-serif;
-    flex-wrap: wrap;
-}
+
 
 .footer-section{
     flex: 1;

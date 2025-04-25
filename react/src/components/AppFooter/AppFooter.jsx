@@ -5,7 +5,7 @@ export default function AppFooter() {
 
 return (
     <>
-    <footer className={styles.siteFooter}>
+    <footer id='main-footer' className={styles.siteFooter}>
         <div className={styles.footerSection}>
             <h4>Our Location</h4>
             <p>1234 Pet Lane<br/>Animal City, OH 56789</p>

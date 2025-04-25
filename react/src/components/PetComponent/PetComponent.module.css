@@ -152,13 +152,7 @@ background-color: #efaa9c;
 
 } */
 
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
-}
+
 
 
 /*   <article className={styles.petComponent}>

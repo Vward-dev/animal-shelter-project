@@ -19,6 +19,7 @@ import PendingApplication from './views/PendingApplications/PendingApplication';
 import AddPetView from './views/AddPetView/AddPetView';
 import UpdatePetListing from './views/UpdatePetView/UpdatePetView';
 import AppFooter from './components/AppFooter/AppFooter';
+import PetProfileView from './views/PetProfileView/PetProfileView';
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -84,6 +85,8 @@ export default function App() {
               <Route path="/pending" element={<PendingApplication />} />
               <Route path="/addpet" element={<AddPetView />} />
               <Route path="pets/pet/:id" element={<UpdatePetListing />} />
+              <Route path="pets/petProfile/:id" element={<PetProfileView />} />
+
               <Route
                 path="/volunteer"
                 element={

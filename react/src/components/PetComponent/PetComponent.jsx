@@ -78,8 +78,9 @@ export default function PetComponent({ pet }) {
                     <img className={styles.petImage} src={pet.photo} alt={pet.name} />
 
                     <footer>
-                        <div>
-                            <button className={styles.adoptButton}>
+                     
+                            <Link to={`/pets/petProfile/${pet.id}`} >
+                            <button  className={styles.adoptButton}>
                                 <div className={styles.c1}></div>
                                 <div className={styles.c2}></div>
                                 <div className={styles.c3}></div>
@@ -88,12 +89,14 @@ export default function PetComponent({ pet }) {
                                     <div className={styles.b2}>
                                         Adopt Me
                                     </div>
-                                </div>
+                                    </div>
+                               
 
                             </button>
-                        </div>
+                            </Link>
+                       
                         <div>
-                            <Link to={`pet/${pet.id}`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
+                            {/* <Link to={`pet/${pet.id}`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link> */}
                         </div>
                         
                     </footer>

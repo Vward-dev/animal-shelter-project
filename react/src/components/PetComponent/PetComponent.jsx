@@ -24,7 +24,6 @@ export default function PetComponent({ pet }) {
         PetService.getAllPets()
             .then((response) => {
                 setPet(response.data);
-                console.log(response.data);
             })
             .catch((error) => {
                 if (error.response) {

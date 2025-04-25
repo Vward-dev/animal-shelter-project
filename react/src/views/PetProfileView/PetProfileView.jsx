@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import PetService from '../../services/PetService';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 import styles from './PetProfileView.module.css'
 
 export default function PetProfileView({ pet }) {
+    const user = useContext(UserContext);
     const { id } = useParams();
     const [petProfile, setPetProfile] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
@@ -22,7 +25,6 @@ export default function PetProfileView({ pet }) {
         PetService.getPetId(id)
             .then((response) => {
                 setPetProfile(response.data);
-                console.log('Pet Profile Data: ', response.data);
             })
             .catch((error) => {
                 const response = error.response;
@@ -87,7 +89,7 @@ export default function PetProfileView({ pet }) {
             </section>
 
             <section className={styles.imageContainer}>
-                <img className={styles.profileImage} src={petProfile.petImage} alt={petProfile.name} />
+                <img className={styles.profileImage} src={petProfile.photo} alt={petProfile.name} />
 
             </section>
 
@@ -121,9 +123,12 @@ export default function PetProfileView({ pet }) {
 
             </footer>
 
-            {/* <div>
-                <Link to={`pet/${pet.id}`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
-            </div> */}
+            
+            {user && (user.authorities[0].name === "ROLE_VOLUNTEER" || user.authorities[0].name === "ROLE_ADMIN") && (
+                <div>
+                <Link to={`/pets/petProfile/${id}/update`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
+            </div>
+            )}
 
 
 

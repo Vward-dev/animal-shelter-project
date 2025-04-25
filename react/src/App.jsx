@@ -84,7 +84,7 @@ export default function App() {
               <Route path="/pets" element={<PetView />} />
               <Route path="/pending" element={<PendingApplication />} />
               <Route path="/addpet" element={<AddPetView />} />
-              <Route path="pets/pet/:id" element={<UpdatePetListing />} />
+              <Route path="pets/petProfile/:id/update" element={<UpdatePetListing />} />
               <Route path="pets/petProfile/:id" element={<PetProfileView />} />
 
               <Route

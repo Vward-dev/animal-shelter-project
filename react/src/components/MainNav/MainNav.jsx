@@ -39,14 +39,18 @@ export default function MainNav({}) {
       </>
       )}
 
+      {user && (user.authorities[0].name !== "ROLE_VOLUNTEER") && (user.authorities[0].name !== "ROLE_ADMIN") && (
+        <div className="nav-link">
+        <NavLink to="/application">
+          Join Us
+        </NavLink>
+      </div>
+      )}
+
       {user ? (
         <>
           
-          <div className="nav-link">
-            <NavLink to="/application">
-              Join Us
-            </NavLink>
-          </div>
+          
           
           <div className="nav-link">
             <NavLink to="/userProfile">

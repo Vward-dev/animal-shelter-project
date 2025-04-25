@@ -15,7 +15,6 @@ export default function PetView() {
         PetService.getAllPets(searchText)
             .then((response) => {
                 setPet(response.data);
-                console.log(response.data);
             })
             .catch((error) => {
                 if (error.response) {
@@ -66,7 +65,7 @@ export default function PetView() {
          
             <div id='petList' className={styles.PetCardGrid}>
                 {pet.map((pet) => (
-                    <PetComponent pet={pet} ></PetComponent>
+                    <PetComponent pet={pet} key={pet.id}></PetComponent>
                 ))}
                        
             </div>

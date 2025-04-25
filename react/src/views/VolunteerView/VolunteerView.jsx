@@ -41,7 +41,7 @@ export default function VolunteerView() {
         <div className={styles.volunteerContainer}>
         {volunteer.map((volunteer) => (
             volunteer.statusId === 2 && (
-                <VolunteerComponent volunteer = {volunteer}></VolunteerComponent>
+                <VolunteerComponent volunteer = {volunteer} key={volunteer.id}></VolunteerComponent>
             )
             
         ))}

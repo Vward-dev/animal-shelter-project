@@ -4,12 +4,21 @@ import styles from './PetComponent.module.css';
 import PetService from '../../services/PetService';
 import { Link, useParams } from 'react-router-dom';
 
+
+
 export default function PetComponent({ pet }) {
-    let petNameClass = styles.petName;
-    if (pet.species === 'Dog') {
-        petNameClass += ` ${styles.dogName}`;
-    } else if (pet.species === 'Cat') {
-        petNameClass += ` ${styles.catName}`;
+    // let petNameClass = styles.petName;
+    // if (pet.species === 'Dog') {
+    //     petNameClass += ` ${styles.dogName}`;
+    // } else if (pet.species === 'Cat') {
+    //     petNameClass += ` ${styles.catName}`;
+    // }
+
+    const defaultPhoto = "../../assets/images/defaultPhoto.png"
+
+    const[imageSrc, setImageSrc] = useState(pet.photo);
+    const handleImageError = () => {
+        setImageSrc(defaultPhoto);
     }
 
 
@@ -51,10 +60,10 @@ export default function PetComponent({ pet }) {
             ) : (
                 <article className={styles.petComponent}>
 
-                    <h1 className={styles.petName}>{pet.name}</h1>
+                  
 
 
-                    <section className={styles.petDetails}>
+                    {/* <section className={styles.petDetails}>
                         <p>
                             <span className={styles.petSpecies}>{pet.species}</span>
                         </p>
@@ -72,11 +81,16 @@ export default function PetComponent({ pet }) {
                         <p>
                             <span className={styles.petDescription}>{pet.description}</span>
                         </p>
-                    </section>
-
-                    <img className={styles.petImage} src={pet.photo} alt={pet.name} />
-
-                    <footer>
+                    </section> */}
+                    <div className={styles.nameContainer}>
+                    <h1 className={styles.petName}>{pet.name}</h1>
+                    </div>
+                    <div className={styles.imageContainer}>
+                    <img className={styles.petImage} src={pet.photo} alt={pet.name} onError={handleImageError}/>
+                    </div>
+                    
+                    <footer >
+                        <div id="boneGrouper">
                      
                             <Link to={`/pets/petProfile/${pet.id}`} >
                             <button  className={styles.adoptButton}>
@@ -95,7 +109,7 @@ export default function PetComponent({ pet }) {
                             </Link>
                        
                       
-                        
+                            </div>
                     </footer>
 
 

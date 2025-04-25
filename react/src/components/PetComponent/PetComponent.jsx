@@ -14,11 +14,11 @@ export default function PetComponent({ pet }) {
     //     petNameClass += ` ${styles.catName}`;
     // }
 
-    const defaultPhoto = "../../assets/images/defaultPhoto.png"
+    const defaultPhoto = "src/assets/images/defaultPhoto.png";
 
     const[imageSrc, setImageSrc] = useState(pet.photo);
-    const handleImageError = () => {
-        setImageSrc(defaultPhoto);
+    const handleImageError = ev => {
+        ev.target.src =  "src/assets/images/defaultPhoto.png";
     }
 
 

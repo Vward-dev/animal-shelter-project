@@ -7,7 +7,7 @@ export default function HomeView() {
   const user = useContext(UserContext);
 
   return (
-    <div>
+    <>
       <main className={styles.main}>
         <section className={styles.hero}>
           <h1>Find Your Furry Friend Today!</h1>
@@ -54,6 +54,6 @@ export default function HomeView() {
           <p>Thank you for considering adopting a pet from us! Every animal deserves a loving home.</p>
         </section>
       </main>
-    </div>
+    </>
   );
 }

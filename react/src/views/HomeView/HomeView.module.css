@@ -21,6 +21,8 @@
      color: #503530;
      padding: 2rem;
      text-align: center;
+     height: 250px;
+     align-content: center;
 
  }
 
@@ -121,6 +123,7 @@
      padding: 2rem;
      background-color: rgb(245, 242, 238);
      color: #503530;
+     align-content: center;
  }
 
  .bottom-text p {

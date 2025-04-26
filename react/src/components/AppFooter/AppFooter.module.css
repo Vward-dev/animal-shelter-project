@@ -1,4 +1,8 @@
-
+.site-footer {
+    display: flex;
+    background-color: rgb(245, 242, 238);
+    padding: 2rem;
+}
 
 .footer-section{
     flex: 1;
@@ -8,12 +12,23 @@
 
 .footer-section h4 {
     margin-bottom: 0.75rem;
-    color: white;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 }
 
 .footer-section p {
     margin: 0;
     line-height: 1.5;
     font-size: 0.95rem;
+}
+
+@media screen and (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
 }

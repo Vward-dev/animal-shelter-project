@@ -7,9 +7,9 @@
 
 }
 
-.pet-card-grid {
-    display: flex;
-    
+.petcards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
 }
 
@@ -17,8 +17,16 @@
     justify-content: center;
 
 }
-.pets-search-bar{
 
+
+@media screen and (max-width: 768px) {
+    .petcards {
+        grid-template-columns: 1fr;
+    }
+    .pet-header{
+        justify-content: center;
+    }
+    
 }
 
 

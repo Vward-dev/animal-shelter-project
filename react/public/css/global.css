@@ -48,12 +48,6 @@ main {
 
 #app {
     width: 100%;
-    /* display: grid;
-    grid-template-columns: 200px 2rem 1fr;
-    grid-template-areas:
-        "header header nav"
-        "main main main"
-        "footer footer footer"; */
     display: flex;
     flex-direction: column;
     
@@ -101,7 +95,7 @@ main {
     margin-right: 1rem;
 }
 
- #app-footer {
+ /* #app-footer {
     grid-area: footer;
     background-color: #ffffff;
     border-top: #ffffff 1px solid;
@@ -109,8 +103,8 @@ main {
     text-align: center;
     opacity: 0.7;
     padding: 1rem;
-} 
-#app-footer {
+}  */
+/* #app-footer {
     display: flex;
     justify-content: space-between;
     background-color: #503530;
@@ -118,7 +112,7 @@ main {
     padding: 2rem 3rem;
     font-family: Arial, Helvetica, sans-serif;
     flex-wrap: wrap;
-}
+} */
 #main-nav {
     grid-area: nav;
     
@@ -132,8 +126,8 @@ main {
 
 .nav-link a {
     display: block;
-    background-color: rgba(245, 245, 245, 0.3);
-    border-bottom: 1px solid rgba(216, 216, 216, 0.7);
+    background-color: #efaa9c;
+    /* border-bottom: 1px solid rgba(216, 216, 216, 0.7); */
     color: #503530;
     margin: 0;
     padding: 0.5rem 1rem;
@@ -150,8 +144,6 @@ a.active {
     background-color: #503530;
     color: #efaa9c;
     font-weight: bolder;
-    font-size: larger;
-}
 /* Icon Button styles */
 .icon-button {
     background-color: transparent;
@@ -280,7 +272,7 @@ tr:nth-child(even) {
     color: white;
   }
 
-#main-footer{
+/* #main-footer{
     display: flex;
     justify-content: space-between;
     background-color: #503530;
@@ -290,7 +282,7 @@ tr:nth-child(even) {
     flex-wrap: wrap;
     width: 100%;
     bottom: 0;
-}
+} */
 
 #header-title{
     grid-column: 2;

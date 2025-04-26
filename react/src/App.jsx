@@ -108,9 +108,7 @@ export default function App() {
               />
             </Routes>
           </main>
-          <footer className='page-wrapper'>
             <AppFooter />
-          </footer>
         </UserContext.Provider>
       </div>
     </BrowserRouter>

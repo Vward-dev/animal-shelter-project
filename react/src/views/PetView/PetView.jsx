@@ -63,10 +63,12 @@ export default function PetView() {
 
 
          
-            <div id='petList' className={styles.PetCardGrid}>
+            <div className={styles.PetCardGrid}>
+                <div className={styles.petcards}>
                 {pet.map((pet) => (
                     <PetComponent pet={pet} key={pet.id}></PetComponent>
                 ))}
+                </div>
                        
             </div>
            

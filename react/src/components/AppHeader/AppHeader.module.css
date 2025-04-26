@@ -4,17 +4,21 @@
     background-color: rgb(245, 242, 238);
     align-items: center;
     justify-content: flex-start;
+    grid-template-areas: "logo headName socials" 
+                         "logo headName donate";
 }
 
 .logo{
    
     margin: -50px;
     padding-left: 30px;
+    grid-area: logo;
 }
 
 h1 {
     font-size: 3rem;
     text-align: center;
+    grid-area: headName;
 }
 
 .donate-button {
@@ -26,6 +30,7 @@ h1 {
     border: 2px solid #503530;
     color: #503530;
     font-family: 'Baloo 2', sans-serif;
+    grid-area: donate;
 }
 
 .donate-button:hover {
@@ -37,13 +42,14 @@ h1 {
 
 #socials {
         position: relative;
-        top: -40px;
+        padding-right: 10px;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         align-content: center;
         justify-content: flex-end;
         align-items: end;
+        grid-area: socials;
 }
 
 /*  Responsive styles */
@@ -65,9 +71,13 @@ h1 {
     }
 
     #socials {
-        position: static;
-        justify-content: center;
-        margin-top: 10px;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+    }
+
+    .logo {
+        padding: 0;
+        height: 200px;
     }
 }
 

@@ -9,7 +9,7 @@
 .logo{
    
     margin: -50px;
-    padding-left: 10px;
+    padding-left: 30px;
 }
 
 h1 {
@@ -44,4 +44,43 @@ h1 {
         align-content: center;
         justify-content: flex-end;
         align-items: end;
+}
+
+/*  Responsive styles */
+@media (max-width: 768px) {
+    .header-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0 2rem;
+    }
+
+    .logo {
+        margin: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #socials {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .donate-button {
+        font-size: medium;
+        width: 100%;
+        max-width: 200px;
+        margin: 10px auto;
+        display: block;
+    }
 }

@@ -2,10 +2,25 @@
     margin-left: 165px;
     margin-right: 15px;
 }
+
 label{
     font-size: 20px;
 }
 
 input{
     background-color:#efaa9c;
+}
+
+form {
+    padding-left: 20px; 
+    margin-left: 20px; 
+}
+
+
+
+h2 {
+    
+    padding-left: 40px; 
+    padding-top: 50px; 
+    font-weight: bold;
 }

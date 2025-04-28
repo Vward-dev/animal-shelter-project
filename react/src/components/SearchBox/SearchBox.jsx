@@ -18,7 +18,7 @@ export default function SearchBox({ searchFunction }){
     return(
         <div id={styles.searchDiv}>
             <input id={styles.input} type="text" onChange={handleSearchTextChange} onKeyDown={handleSearch} />
-            <button onClick={handleSearch}>Search</button>
+            <button id={styles.searchButton} onClick={handleSearch}>Search</button>
         </div>
     )
 

@@ -6,7 +6,7 @@
     padding: 16px;
     background-color:#503530;
     max-width: 300px; 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
    
 
     /* expanding pet image upon adoption hover experiment  */
@@ -47,19 +47,18 @@ border: 2px solid black;
 
 }
 .image-container{
-  width: 200px;
-  height: 200px;
+  
   padding-top: 8px;
   padding-bottom: 8px;
 }
 .pet-image{
-  width: 200px;
-  height: 300px;
+  width: 215px;
+  height: 215px;
   border-radius: 8px;
   margin-top: 12px ;
   margin-bottom: 12px;
   object-fit: cover;
-  max-height: fit-content;
+  
 
   /* expanding pet image upon adoption hover experiment  */
   transition: transform 0.5s ease-in-out;
@@ -79,7 +78,7 @@ footer{
   align-items: center;
   position: relative;
 }
-#boneGrouper{
+#bone-grouper{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,17 +130,18 @@ footer{
 .c1{
   left: 0;
   top: 0;
+  
 }
 .c2{
   right: 0;
   top: 0;
 }
 .c3{
-  left: 0;
-  bottom: 0;
+  left: 1px;
+  bottom: 3px;
 }
 .c4{
-  bottom: 0;
+  bottom: 3px;
   right: 0;
 }
 .b1 {
@@ -151,6 +151,8 @@ footer{
   position:absolute;  
   left: 15px;
   top: 15px;
+  padding: none;
+  
 }
 .b2 {
   background-color: #fff;
@@ -160,12 +162,14 @@ footer{
   color: #503530;
   left: 15px;
   top: 0;
-  width: 90px;
+  width: 95px;
   height: 30px;
   line-height: 30px;
   border-top: 3px solid black;
   border-bottom: 3px solid black;
   text-align: center;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 

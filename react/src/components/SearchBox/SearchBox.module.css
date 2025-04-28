@@ -2,8 +2,29 @@
     display : flex;
     justify-content: center;
     padding: 10px;
+    height: 45px;
 }
 
 #input {
     background-color: antiquewhite;
+    border-radius: 8px;
+    border: 2px solid #503530;
+    
+
+}
+
+#input:focus {
+    outline: none;
+    border-color: #503530;
+}
+
+#search-button{
+    margin-left: 10px;
+    background-color: antiquewhite;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 600;
+    border: 2px solid #503530;
+    color: #503530;
+    padding-bottom: 20px;
+    padding-top: 0px;
 }

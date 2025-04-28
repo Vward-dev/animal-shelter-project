@@ -90,7 +90,7 @@ export default function PetComponent({ pet }) {
                     </div>
                     
                     <footer >
-                        <div id="boneGrouper">
+                        <div id="bone-grouper">
                      
                             <Link to={`/pets/petProfile/${pet.id}`} >
                             <button  className={styles.adoptButton}>

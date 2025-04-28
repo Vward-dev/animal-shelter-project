@@ -1,30 +1,30 @@
 import axios from "axios";
 
-const http = axios.create({
-    baseURL: 'http://localhost:9000/'
-});
+// const http = axios.create({
+//     baseURL: 'http://localhost:9000/'
+// });
 
 
 export default {
 
     getAllPets(searchString) {
         if (searchString) {
-            return http.get(`pet?search=${searchString}`)
+            return axios.get(`pet?search=${searchString}`)
         } else {
-            return http.get('pet')
+            return axios.get('pet')
         }
     },
 
     getPetId(id) {
-        return http.get(`pet/${id}`)
+        return axios.get(`pet/${id}`)
     },
 
     createPet(pet) {
-        return http.post('pet', pet)
+        return axios.post('pet', pet)
     },
 
     updatePetListing(pet) {
-        return http.put(`pet/${pet.id}`, pet)
+        return axios.put(`pet/${pet.id}`, pet)
     },
 
 

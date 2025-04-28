@@ -6,6 +6,7 @@ import com.techelevator.exception.DaoException;
 import com.techelevator.model.Pet;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -43,6 +44,7 @@ public class PetController {
         return pets;
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'VOLUNTEER')")
     @RequestMapping( method = RequestMethod.POST)
     public Pet createPet(@Valid @RequestBody Pet newPet) {
         Pet pet = null;
@@ -61,6 +63,7 @@ public class PetController {
         return pet;
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'VOLUNTEER')")
     @RequestMapping ( path = "/{id}", method = RequestMethod.PUT )
     public Pet updatePet(@PathVariable int id, @RequestBody Pet pet) {
         Pet updatedPet = null;
@@ -70,6 +73,7 @@ public class PetController {
         return updatedPet;
     }
 
+    @PreAuthorize("hasAnyRole('ADMIN', 'VOLUNTEER')")
     @RequestMapping ( path = "/{id}", method = RequestMethod.DELETE )
     public int deletePetById(@PathVariable int id) {
         int rowsAffected = petService.deletePetById(id);

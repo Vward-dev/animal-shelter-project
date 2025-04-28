@@ -154,7 +154,10 @@ footer{
 }
 .b2 {
   background-color: #fff;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: bold;
   position: absolute;
+  color: #503530;
   left: 15px;
   top: 0;
   width: 90px;

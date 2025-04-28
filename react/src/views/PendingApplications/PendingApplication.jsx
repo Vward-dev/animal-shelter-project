@@ -61,20 +61,23 @@ export default function PendingApplication() {
     }
 
     return (
-        <>
-            <div>{errorMessage}</div>
-            <h1>Pending Applications</h1>
+        <div className={styles.pendingView}>
+            <div className={styles.errorMessage}>{errorMessage}</div>
+            <div className={styles.pendingContainer}>
+                <h1>Pending Applications</h1>
 
-            {volunteers.map((volunteer) => (
-                <div key={volunteer.id}>
-                    <VolunteerComponent volunteer={volunteer}></VolunteerComponent>
-                    <button onClick={() => approveVolunteer(volunteer)}>Approve</button>
-                    <button onClick={() => denyVolunteer(volunteer)}>Deny</button>
+                <div className={styles.cardGrid}>
+                {volunteers.map((volunteer) => (
+                    <div key={volunteer.id}>
+                        <VolunteerComponent volunteer={volunteer}></VolunteerComponent>
+                        <button onClick={() => approveVolunteer(volunteer)}>Approve</button>
+                        <button onClick={() => denyVolunteer(volunteer)}>Deny</button>
+                    </div>
+                ))}
                 </div>
-            ))}
-        </>
+            </div>
+        </div>
     )
 }
 
 
-    

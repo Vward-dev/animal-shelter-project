@@ -6,7 +6,7 @@
     padding: 16px;
     background-color:#503530;
     max-width: 300px; 
-    box-shadow: 0 0 .5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
    
 
     /* expanding pet image upon adoption hover experiment  */

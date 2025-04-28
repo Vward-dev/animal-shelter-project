@@ -1,6 +1,7 @@
 
 import styles from './AppHeader.module.css';
 import SocialComponents from '../socialComponents/SocialComponents';
+import { Navigate } from 'react-router-dom';
 export default function AppHeader({logo}) {
 
     return (
@@ -8,7 +9,7 @@ export default function AppHeader({logo}) {
             <header id='app-head' className={styles.headerGrid}>
                 
                     
-                    <img className={styles.logo} src="src\assets\images\Gimme.png" alt="" />
+                    <img className={styles.logo} src="src\assets\images\Gimme.png" alt=""/>
                     <h1 id='header-title'>Gimme Shelter Adoption</h1>
                     <div id={styles.socials}>
                     <SocialComponents></SocialComponents>

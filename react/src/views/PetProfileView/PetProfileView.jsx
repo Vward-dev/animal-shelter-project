@@ -75,69 +75,63 @@ export default function PetProfileView({ pet }) {
 
     return (
         <div className={styles.PetProfileContainer}>
-            <header className={styles.petProfileHeader}>
-                <h1>{petProfile.name}</h1>
+            <div className={styles.container}>
+                <div className={styles.profileCard}>
+                    <header className={styles.petProfileHeader}>
+                        <h1>{petProfile.name}</h1>
+                    </header>
 
-            </header>
+                    <section className={styles.profileDetails}>
+                        <div>Species: {petProfile.species}</div>
+                        <div>Breed: {petProfile.breed}</div>
+                        <div>Age: {petProfile.age}</div>
+                        <div>Sex:{petProfile.sex}</div>
+                        <div>{petProfile.details}</div>
+                    </section>
 
-            <section className={styles.profileDetails}>
-                <div>{petProfile.species}</div>
-                <div>{petProfile.breed}</div>
-                <div>{petProfile.age}</div>
-                <div>{petProfile.sex}</div>
-                <div>{petProfile.details}</div>
-            </section>
+                    <section className={styles.imageContainer}>
+                        <img className={styles.profileImage} src={petProfile.photo} alt={petProfile.name} />
 
-            <section className={styles.imageContainer}>
-                <img className={styles.profileImage} src={petProfile.photo} alt={petProfile.name} />
+                    </section>
+                </div>
 
-            </section>
+                <section className={styles.adoptionForm}>
+                    <h2>Apply to Adopt {petProfile.name}</h2>
+                    <form>
+                        <div>
+                            <label>Your First Name:</label>
+                            <input type='text' id='first_name'>
+                            </input>
+                        </div>
+                        <div>
+                            <label>Your Last Name:</label>
+                            <input type='text' id='last_name'></input>
+                        </div>
+                        <div>
+                            <label>Your Phone:</label>
+                            <input type='text' id='phone_number'></input>
+                        </div>
+                        <div>
+                            <label>Why would you like to adopt {petProfile.name}? :</label>
+                            <input type='text' id='adoption_reason'></input>
+                        </div>
 
-            <section className={styles.adoptionForm}>
-                <h2>Apply to Adopt {petProfile.name}</h2>
-                <form>
+
+                    </form>
+
+
+                </section>
+                <footer>
+
+                </footer>
+
+
+                {user && (user.authorities[0].name === "ROLE_VOLUNTEER" || user.authorities[0].name === "ROLE_ADMIN") && (
                     <div>
-                        <label>Your First Name:</label>
-                        <input type='text' id='first_name'>
-                        </input>
+                        <Link to={`/pets/petProfile/${id}/update`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
                     </div>
-                    <div>
-                        <label>Your Last Name:</label>
-                        <input type='text' id='last_name'></input>
-                    </div>
-                    <div>
-                        <label>Your Phone:</label>
-                        <input type='text' id='phone_number'></input>
-                    </div>
-                    <div>
-                        <label>Why would you like to adopt {petProfile.name}? :</label>
-                        <input type='text' id='adoption_reason'></input>
-                    </div>
-
-
-                </form>
-
-
-            </section>
-            <footer>
-
-            </footer>
-
-            
-            {user && (user.authorities[0].name === "ROLE_VOLUNTEER" || user.authorities[0].name === "ROLE_ADMIN") && (
-                <div>
-                <Link to={`/pets/petProfile/${id}/update`} pet={pet} className={styles.updatePetButton}>Edit Pet Listing </Link>
+                )}
             </div>
-            )}
-
-
-
-
-
-
-
-
-
         </div>
     )
 }

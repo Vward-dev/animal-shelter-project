@@ -68,10 +68,10 @@ export default function PendingApplication() {
 
                 <div className={styles.cardGrid}>
                 {volunteers.map((volunteer) => (
-                    <div key={volunteer.id}>
-                        <VolunteerComponent volunteer={volunteer}></VolunteerComponent>
-                        <button onClick={() => approveVolunteer(volunteer)}>Approve</button>
-                        <button onClick={() => denyVolunteer(volunteer)}>Deny</button>
+                    <div className={styles.volunteerBlock} key={volunteer.id}>
+                        <VolunteerComponent className={styles.volunteerInfo} volunteer={volunteer}></VolunteerComponent>
+                        <button  className={styles.button1} onClick={() => approveVolunteer(volunteer)}>Approve</button>
+                        <button className={styles.button2} onClick={() => denyVolunteer(volunteer)}>Deny</button>
                     </div>
                 ))}
                 </div>

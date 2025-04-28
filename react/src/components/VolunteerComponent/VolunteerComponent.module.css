@@ -1,7 +1,10 @@
 .volunteer{
     display: flex;
     flex-direction: column;
-    padding: 20px
+    padding: 20px;
+    background-color: #efaa9c;
+    border: 2px solid #503530;
+    margin: 10px;
 }
 
 .volunteer h1 {

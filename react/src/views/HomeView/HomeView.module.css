@@ -55,7 +55,8 @@
  .pet-feature-cards {
      display: flex;
      flex-wrap: wrap;
-     justify-content: center
+     justify-content: center;
+     gap: 4rem;
  }
 
  .pet-feature-card {
@@ -65,59 +66,128 @@
      width: calc(30% - 4rem);
      background-color: rgb(245, 242, 238);
      border-radius: 0.5rem;
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
      
  }
-
+/*added*/
+.pet-feature-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
  
 
  .pet-feature-image img {
     width: 100%;
     height: 100%; 
     object-fit: cover;
-    object-position: center;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    /*object-position: center;*/
+    /*border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem; removed these */
   }
 
- .pet-feature-info {
+ /*.pet-feature-info {
      padding: 3rem;
      position: relative;
      height: 200px;
      overflow-y: auto;
      padding: 2rem 2rem 2rem 2rem;
 
+ } replaced this */
+
+ .pet-feature-info {
+    padding-top: 20px;
+    padding: 2rem;
+    position: relative;
+    height: 200px;
+    overflow-y: auto;
+    margin-top: 20px;
  }
 
+/*added*/
+ .pet-feature-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #503530;
+    font-weight: bold;
+ }
+ /*added*/
+ .pet-feature-info p {
+    font-size: 1rem;
+    color: #503530;
+   
+ }
 
+ 
 
  .pet-badge {
-    
-     background-color: #efaa9c;
-     color: rgb(245, 242, 238);
-     padding: 0.5rem 2rem 0.5rem 4rem;
-     transform: rotate(45deg) translate(25%, 25%);
-     font-size: 0.8rem;
-     text-align: center;
-
-
-
+    background-color: #efaa9c;
+    color: white;
+    padding: 0.3rem 1rem;
+    position: absolute;
+    bottom: 1rem; 
+    left: 1rem;  
+    transform: none;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
 
  }
 
+  /* Pet Adoption Card*/
+.pet-adoption-card {
+    display: flex;
+    justify-content: center; 
+    margin-top: 1rem; 
+    margin-bottom: 4rem;
+  }
+  
+  .pet-adoption-card .pet-card {
+    display: flex;
+    flex-direction: row; 
+    width: 80%; 
+    background-color: rgb(245, 242, 238);
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    overflow: hidden; 
+    height:150px;
+  }
+  
+  .pet-adoption-card .pet-image {
+    flex: 0 0 300px;
+  }
+  
+  .pet-adoption-card .pet-image img {
+    width: 300px; 
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+  
+  .pet-adoption-card .pet-info {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    color: #503530;
+    font-weight: 400;
+    font-size: 1.2rem;
+   
+  }
+  .pet-adoption-card .pet-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #503530;
+    font-weight: bold;
+  }
+  
 
 
- .pet-feature-info h3 {
-     font-size: 1.5rem;
-     margin-bottom: 0.5rem;
-     color: #503530;
-     font-weight: bold;
- }
 
- .pet-feature-info p {
-     font-size: 1rem;
-     color: #503530;
- }
 
  .bottom-text {
      text-align: center;

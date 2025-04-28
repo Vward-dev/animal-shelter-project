@@ -6,12 +6,14 @@
     padding: 16px;
     background-color:#503530;
     max-width: 300px; 
-     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+   
    
 
     /* expanding pet image upon adoption hover experiment  */
     position:relative;
     overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+   
  }
 .pet-details {
 display: flex;

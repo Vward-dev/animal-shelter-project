@@ -50,6 +50,21 @@ export default function HomeView() {
           </div>
         </section>
 
+        <section>
+    <div className={styles.petAdoptionCard}>
+      <div className={styles.petCard}>        
+      <div className={styles.petImage}>
+        <img src="https://t3.ftcdn.net/jpg/02/36/99/22/360_F_236992283_sNOxCVQeFLd5pdqaKGh8DRGMZy7P4XKm.jpg" alt="Adopt Special" />
+      </div>
+      <div className={styles.petInfo}>
+        <h3>Celebrating Tiana's Adoption!</h3>
+        <p>She has found her forever loving home thanks to you and all of your support! Enjoying belly rubs, playtime and 
+          a happy environment with her new family. </p>
+      </div>
+    </div>
+  </div>
+</section>
+
         <section className={styles.bottomText}>
           <p>Thank you for considering adopting a pet from us! Every animal deserves a loving home.</p>
         </section>

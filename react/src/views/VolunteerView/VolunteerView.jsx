@@ -3,14 +3,15 @@ import VolunteerService from '../../services/VolunteerService';
 import { useParams } from 'react-router-dom';
 import VolunteerComponent from '../../components/VolunteerComponent/VolunteerComponent';
 import styles from './VolunteerView.module.css';
+import SearchBox from '../../components/SearchBox/SearchBox';
 
 export default function VolunteerView() {
 
     const [errorMessage, setErrorMessage] = useState('');
     const [volunteer, setVolunteer] = useState([]);
 
-    function getVolunteer() {
-        VolunteerService.getAllVolunteers()
+    function getVolunteer(searchText) {
+        VolunteerService.getAllVolunteers(searchText)
             .then((response) => {
                 setVolunteer(response.data);
             })
@@ -35,8 +36,11 @@ export default function VolunteerView() {
 
     return (
         <>
+            <div className={styles.VolunteerSearchBox}> {errorMessage}</div>
             <header>
+                
                 <h1 className={styles.volunteerHeader}>Our Volunteers!</h1>
+                <SearchBox searchFunction={getVolunteer} />
             </header>
             <div className={styles.volunteerContainer}>
                 {volunteer.map((volunteer) => (

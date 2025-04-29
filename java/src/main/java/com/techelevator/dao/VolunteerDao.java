@@ -22,6 +22,7 @@ public interface VolunteerDao {
     Volunteer denyVolunteer(Volunteer volunteer);
 
     int deleteVolunteerById(int id);
+    List<Volunteer> filterVolunteers (String searchTerm, boolean useWildCard);
 
 
 }

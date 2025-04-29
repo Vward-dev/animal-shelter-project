@@ -2,11 +2,14 @@ package com.techelevator.controller;
 
 import com.techelevator.Service.VolunteerService;
 import com.techelevator.dao.UserDao;
+import com.techelevator.exception.DaoException;
 import com.techelevator.model.User;
 import com.techelevator.model.Volunteer;
 import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -27,13 +30,24 @@ public class VolunteerController {
     }
     @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping( method = RequestMethod.GET)
-    public List<Volunteer> getVolunteers() {
+    public List<Volunteer> getVolunteers(@RequestParam(defaultValue = "") String search) {
 
         List<Volunteer> volunteers = new ArrayList<>();
         volunteers = volunteerService.getVolunteers();
 
+        try {
+            if (search != null) {
+                volunteers = volunteerService.filterVolunteers(search);
+            }else {
+                volunteers = volunteerService.getVolunteers();
+            }
+        }catch (DaoException e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        }
+
         return volunteers;
     }
+
 
     @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(path = "/pending" ,method = RequestMethod.GET)
@@ -41,6 +55,8 @@ public class VolunteerController {
 
         List<Volunteer> volunteers = new ArrayList<>();
         volunteers = volunteerService.getPendingVolunteers();
+
+
 
         return volunteers;
     }
@@ -106,4 +122,7 @@ public class VolunteerController {
 
         return rowsAffected;
     }
+
+
+
 }

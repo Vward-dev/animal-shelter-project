@@ -10,8 +10,12 @@ import axios from "axios";
     
 export default {
 
-    getAllVolunteers(){
+    getAllVolunteers(searchString){
+        if(searchString) {
+            return axios.get(`volunteer?search=${searchString}`)
+        }else{
         return axios.get('volunteer')
+        }
     },
 
     getVolunteerId(id){

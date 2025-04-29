@@ -3,13 +3,14 @@ import { useState, useEffect } from 'react';
 import VolunteerService from '../../services/VolunteerService';
 import { useParams } from 'react-router-dom';
 import VolunteerComponent from '../../components/VolunteerComponent/VolunteerComponent';
+import SearchBox from '../../components/SearchBox/SearchBox';
 
 export default function PendingApplication() {
     const [errorMessage, setErrorMessage] = useState('');
     const [volunteers, setVolunteers] = useState([]);
 
-    function getVolunteers() {
-        VolunteerService.getPendingVolunteers()
+    function getVolunteers(searchText) {
+        VolunteerService.getPendingVolunteers(searchText)
             .then((response) => {
                 setVolunteers(response.data);
             })
@@ -64,7 +65,9 @@ export default function PendingApplication() {
         <div className={styles.pendingView}>
             <div className={styles.errorMessage}>{errorMessage}</div>
             <div className={styles.pendingContainer}>
+            <div className={styles.VolunteerSearchBox}> {errorMessage}</div>
                 <h1>Pending Applications</h1>
+                <SearchBox searchFunction={getVolunteers} />
 
                 <div className={styles.cardGrid}>
                 {volunteers.map((volunteer) => (

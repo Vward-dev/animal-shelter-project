@@ -47,4 +47,8 @@ public class VolunteerService {
     public Volunteer denyVolunteer(Volunteer volunteer) {
         return volunteerDao.denyVolunteer(volunteer);
     }
+    public List<Volunteer> filterVolunteers(String filterString){
+        return volunteerDao.filterVolunteers(filterString, true);
+    }
+
 }

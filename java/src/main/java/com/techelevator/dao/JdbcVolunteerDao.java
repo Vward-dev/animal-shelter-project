@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class JdbcVolunteerDao implements VolunteerDao{
+public class JdbcVolunteerDao implements VolunteerDao {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -39,25 +39,25 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return volunteers;
     }
 
-    public Volunteer getVolunteerById(int id){
+    public Volunteer getVolunteerById(int id) {
         Volunteer volunteer = null;
 
         // Query
         String sql = "SELECT * FROM volunteer WHERE volunteer_id = ?";
 
-        try{
+        try {
 
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
-            if(results.next()) {
+            if (results.next()) {
                 volunteer = mapRowToVolunteer(results);
             }
-        }catch ( CannotGetJdbcConnectionException e) {
+        } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database", e);
         }
         return volunteer;
     }
 
-    public  List<Volunteer> getPendingVolunteers() {
+    public List<Volunteer> getPendingVolunteers() {
         List<Volunteer> volunteers = new ArrayList<>();
         // Query
         String sql = "SELECT * FROM volunteer WHERE volunteer_status_id = 1";
@@ -73,7 +73,6 @@ public class JdbcVolunteerDao implements VolunteerDao{
         }
         return volunteers;
     }
-
 
 
     public Volunteer createVolunteer(Volunteer volunteer) {
@@ -133,7 +132,7 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return numberOfRows;
     }
 
-    public Volunteer approveVolunteer(Volunteer updatedVolunteer){
+    public Volunteer approveVolunteer(Volunteer updatedVolunteer) {
 
         Volunteer newVolunteer = null;
 
@@ -154,7 +153,7 @@ public class JdbcVolunteerDao implements VolunteerDao{
         return newVolunteer;
     }
 
-    public Volunteer denyVolunteer(Volunteer updatedVolunteer){
+    public Volunteer denyVolunteer(Volunteer updatedVolunteer) {
 
         Volunteer newVolunteer = null;
 
@@ -173,6 +172,27 @@ public class JdbcVolunteerDao implements VolunteerDao{
         }
         return newVolunteer;
     }
+    public List<Volunteer> filterVolunteers(String searchTerm, boolean useWildCard) {
+        List<Volunteer> volunteers = new ArrayList<>();
+
+
+        String sql = "SELECT * FROM volunteer WHERE first_name ILIKE ? OR last_name ILIKE ?; ";
+
+
+        if (useWildCard) {
+            searchTerm = '%' + searchTerm + '%';
+        }
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, searchTerm, searchTerm);
+            while (results.next()) {
+                Volunteer volunteer = mapRowToVolunteer(results);
+                volunteers.add(volunteer);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database", e);
+        }
+        return volunteers;
+    }
 
     private Volunteer mapRowToVolunteer(SqlRowSet rowSet) {
         Volunteer volunteer = new Volunteer();
@@ -189,4 +209,6 @@ public class JdbcVolunteerDao implements VolunteerDao{
 
         return volunteer;
     }
+
+
 }

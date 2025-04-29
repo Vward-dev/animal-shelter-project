@@ -6,14 +6,43 @@ input {
     display: flex;
     flex-direction: column ;
     padding : 8px;
+    
 }
+
+.input-field > input{
+    
+    border-radius: 8px;
+    border: 2px solid #503530;
+    padding: 2px;
+}
+
+.input-field > input:focus{
+    outline: none;
+    border-color: #503530;
+}
+
 
 label {
     text-align: left;
     font-weight: 1000;
+    
 }
 
 .form-container {
     display: flex;
     justify-content: space-around;;
+    
+}
+
+.submit-button{
+    background-color: antiquewhite;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 600;
+    border: 2px solid #503530;
+    color: #503530;
+    padding: 4px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-left: 7.5px;
+    margin-top: 10px;
 }

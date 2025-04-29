@@ -9,8 +9,8 @@ export default function PendingApplication() {
     const [errorMessage, setErrorMessage] = useState('');
     const [volunteers, setVolunteers] = useState([]);
 
-    function getVolunteers(searchText) {
-        VolunteerService.getPendingVolunteers(searchText)
+    function getVolunteers() {
+        VolunteerService.getPendingVolunteers()
             .then((response) => {
                 setVolunteers(response.data);
             })
@@ -67,7 +67,7 @@ export default function PendingApplication() {
             <div className={styles.pendingContainer}>
             <div className={styles.VolunteerSearchBox}> {errorMessage}</div>
                 <h1>Pending Applications</h1>
-                <SearchBox searchFunction={getVolunteers} />
+                
 
                 <div className={styles.cardGrid}>
                 {volunteers.map((volunteer) => (

@@ -121,7 +121,7 @@ export default function AddPetForm() {
                                 />
                             </div>
                             <div>
-                                <button type="submit">Submit</button>
+                                <button className={styles.submitButton} type="submit">Submit</button>
 
                             </div>
                         </form>

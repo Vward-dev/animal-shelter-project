@@ -118,7 +118,7 @@ export default function AddEditApplicationForm({
                                 /> </div>
 
                             <div>
-                                <button type="submit">Submit</button>
+                                <button className={styles.volButton} type="submit">Submit</button>
 
                             </div>
                         </form>

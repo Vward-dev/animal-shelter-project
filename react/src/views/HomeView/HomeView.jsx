@@ -16,7 +16,7 @@ export default function HomeView() {
         </section>
 
         <section className={styles.featuredPets}>
-          <h2>FEATURED PETS</h2>
+          <h2>Featured Pets</h2>
           <div className={styles.petFeatureCards}>
             <div className={styles.petFeatureCard}>
               <div className={styles.petFeatureImage}>

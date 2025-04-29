@@ -23,7 +23,7 @@ export default function MainNav({}) {
       {user && user.authorities[0].name === "ROLE_ADMIN" && (
         <div className="nav-link">
         <NavLink  to="/pending">
-           Pending Applications
+           Applications
            </NavLink>
       </div>
         )}

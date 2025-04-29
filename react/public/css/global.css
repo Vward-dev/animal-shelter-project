@@ -31,6 +31,8 @@ h1 {
 }
 
 h2 {
+    font-family: 'Indie Flower', 'Winky Rough';
+    font-weight: bolder;
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -201,13 +203,11 @@ input {
 button {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 0.25rem 0.5rem;
+    
     
 }
 
-.btn-primary {
-    background-color: rgba(180, 180, 180, 0.4);
-}
+
 
 .form-control {
     margin-bottom: 1rem;

@@ -85,7 +85,7 @@ export default function PetProfileView({ pet }) {
                         <div>Species: {petProfile.species}</div>
                         <div>Breed: {petProfile.breed}</div>
                         <div>Age: {petProfile.age}</div>
-                        <div>Sex:{petProfile.sex}</div>
+                        <div>Sex: {petProfile.sex}</div>
                         <div>{petProfile.details}</div>
                     </section>
 
@@ -97,7 +97,7 @@ export default function PetProfileView({ pet }) {
 
                 <section className={styles.adoptionForm}>
                     <h2>Apply to Adopt {petProfile.name}</h2>
-                    <form>
+                    <form className={styles.adoptionInfo}>
                         <div>
                             <label>Your First Name:</label>
                             <input type='text' id='first_name'>

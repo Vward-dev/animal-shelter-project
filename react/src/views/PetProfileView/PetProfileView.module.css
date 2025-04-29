@@ -34,12 +34,30 @@
     overflow: hidden;
 }
 
-.adoption-info {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+.adoption-form {
+    
+    background-color: #503530;
+    color: #efaa9c;
+    justify-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding-right: 14px;
+    justify-content: center;
+    width: 100%;
+   
+}
+.adoption-form-header{
+    justify-content: center;
+   
 
 }
+
+
+.adoption-info {
+
+  
+
+}
+
 .pet-profile-header{
     font-family: 'Baloo 2', sans-serif;
 }

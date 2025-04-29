@@ -96,7 +96,7 @@ export default function PetProfileView({ pet }) {
                 </div>
 
                 <section className={styles.adoptionForm}>
-                    <h2>Apply to Adopt {petProfile.name}</h2>
+                    <h2 className={styles.adoptionFormHeader}>Apply to Adopt {petProfile.name}</h2>
                     <form className={styles.adoptionInfo}>
                         <div>
                             <label>Your First Name:</label>
@@ -117,7 +117,25 @@ export default function PetProfileView({ pet }) {
                         </div>
 
 
+
+
                     </form>
+                    <div id="bone-grouper">
+                    <button  className={styles.adoptButton}>
+                                <div className={styles.c1}></div>
+                                <div className={styles.c2}></div>
+                                <div className={styles.c3}></div>
+                                <div className={styles.c4}></div>
+                                <div className={styles.b1}>
+                                    <div className={styles.b2}>
+                                        Adopt Me
+                                    </div>
+                                    </div>
+                               
+
+                            </button>
+                            </div>
+                    
 
 
                 </section>

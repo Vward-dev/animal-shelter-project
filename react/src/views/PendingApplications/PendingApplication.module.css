@@ -28,3 +28,10 @@
     background-color: antiquewhite;
 }
 
+@media (max-width: 360px) {
+    .card-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+

@@ -33,6 +33,16 @@
     position: relative;
     overflow: hidden;
 }
+.image-container {
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+   
+}
+
+.profile-image{
+    width: 100%;
+}
 
 .adoption-form {
     
@@ -42,7 +52,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     padding-right: 14px;
     justify-content: center;
-    width: 100%;
+    width: 80%;
    
 }
 .adoption-form-header{
@@ -50,9 +60,37 @@
    
 
 }
+.adoption-form {
 
-
+    width: 82%;
+}
 .adoption-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.adoption-info > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+   width: 50%;
+
+  
+
+}
+.adoption-info > div > label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    
+    width: 100%;
 
   
 

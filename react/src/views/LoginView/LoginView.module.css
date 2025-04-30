@@ -46,7 +46,7 @@ h2 {
     font-weight: bold;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     input {
         width: 80%;
     }

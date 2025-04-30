@@ -40,9 +40,9 @@
    
 }
 
-.profile-image{
+/* .profile-image{
     width: 100%;
-}
+} */
 
 .adoption-form {
     
@@ -100,17 +100,32 @@
     font-family: 'Baloo 2', sans-serif;
 }
 
+@media (max-width: 750px) {
+    
+    .profile-card {
+        width: 80%;
 
 
-@media screen and (max-width: 768px) {
+    }
+}
+
+@media screen and (max-width: 375px) {
     .profile-details {
         grid-template-columns: 1fr;
         width: 100%;
     }
 
-    img {
-        width: 100%;
+    .image-container {
+        width: 200px;
         height: auto;
+    }
+
+    .adoption-info > div {
+        flex-direction: column;
+    }
+
+    img {
+        width : 200px;
     }
 
 }

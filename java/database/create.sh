@@ -8,4 +8,5 @@ psql -U postgres -d $DATABASE -f "$BASEDIR/schema.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/team_schema.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/data.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/team_table_data.sql" &&
+psql -U postgres -d $DATABASE -f "$BASEDIR/pet_data.sql" &&
 psql -U postgres -d $DATABASE -f "$BASEDIR/user.sql"

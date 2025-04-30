@@ -86,7 +86,7 @@ export default function PetProfileView({ pet }) {
                         <div>Breed: {petProfile.breed}</div>
                         <div>Age: {petProfile.age}</div>
                         <div>Sex: {petProfile.sex}</div>
-                        <div>{petProfile.details}</div>
+                        <div>{petProfile.description}</div>
                     </section>
 
                     <section className={styles.imageContainer}>

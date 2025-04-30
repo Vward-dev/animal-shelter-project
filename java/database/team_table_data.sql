@@ -1,8 +1,14 @@
 BEGIN TRANSACTION;
 
 INSERT INTO pet (name, species, age, sex, description, breed, adoption_status_id, photo) VALUES ('king', 'dog', 2, 'M', 'pretty small dog', 'pug', 1, 'https://c.files.bbci.co.uk/17444/production/_124800359_gettyimages-817514614.jpg');
-INSERT INTO volunteer (admin_status, first_name, last_name, email, phone, bio_desc, volunteer_status_id, user_id) VALUES ('FALSE', 'bob', 'bill', 'bill@yahoo.com', '915-981-8734', 'big bobs bio', 2, 2);
-INSERT INTO volunteer (admin_status, first_name, last_name, email, phone, bio_desc, volunteer_status_id, user_id) VALUES ('true', 'lisa', 'frank', 'lisa@yahoo.com', '915-923-8734', 'boss lisa', 1, 1);
+INSERT INTO volunteer (admin_status, first_name, last_name, email, phone, bio_desc, volunteer_status_id, user_id) 
+VALUES ('FALSE', 'bob', 'bill', 'bill@yahoo.com', '915-981-8734', 'big bobs bio', 2, 2),
+	('true', 'lisa', 'frank', 'lisa@yahoo.com', '915-923-8734', 'boss lisa', 1, 1),
+	('False', 'Olivia', 'Thompson', 'olive@gmail.com', '815-981-4574', 'I really love cats', 1, 2),
+	('False', 'Liam', 'Kang', 'lieam@yahoo.com', '650-123-1569', 'Have zero pets at home', 1, 2),
+	('False', 'Chuck', 'Testa', 'ctest@gmail.com', '360-258-7521', 'Taxedirmist', 1, 2),
+	('False', 'Emma', 'Rob', 'em@gmail.com', '521-458-7532', 'loves animals', 2, 2);
+	
 INSERT INTO pet (
 	
 name,

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import PetService from "../../services/PetService";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import styles from "./UpdatePetView.module.css";
 //import { UserContext } from "../../context/UserContext";
 
 export default function UpdatePetListing() {
@@ -109,10 +111,10 @@ export default function UpdatePetListing() {
                 <div>
                     <h2>Update pet information for {pet.name}</h2>
 
-                    <form onSubmit={handleSubmit}>
+                    <form className={styles.editForm}onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="name">Name: {pet.name}</label>
-                            {showName ? (<button onClick={(e) => setShowName(false)}>&#x270F;</button>) : 
+                            <label htmlFor="name">Name:</label>
+                            {showName ? (<button onClick={(e) => setShowName(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="name"
@@ -120,8 +122,8 @@ export default function UpdatePetListing() {
                             />)}                     
                         </div>
                         <div>
-                            <label htmlFor="species">Species: {pet.species}</label>
-                            {showSpecies ? (<button onClick={(e) => setShowSpecies(false)}>&#9999;</button>) : 
+                            <label htmlFor="species">Species:</label>
+                            {showSpecies ? (<button onClick={(e) => setShowSpecies(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="species"
@@ -129,8 +131,8 @@ export default function UpdatePetListing() {
                             />)}                     
                         </div>
                         <div>
-                            <label htmlFor="age">Age: {pet.age}</label>
-                            {showAge ? (<button onClick={(e) => setShowAge(false)}>&#9999;</button>) : 
+                            <label htmlFor="age">Age:</label>
+                            {showAge ? (<button onClick={(e) => setShowAge(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="age"
@@ -138,8 +140,8 @@ export default function UpdatePetListing() {
                             />)}
                         </div>
                         <div>
-                            <label htmlFor="sex">Sex: {pet.sex}</label>
-                            {showSex ? (<button onClick={(e) => setShowSex(false)}>&#9999;</button>) : 
+                            <label htmlFor="sex">Sex:</label>
+                            {showSex ? (<button onClick={(e) => setShowSex(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="sex"
@@ -147,8 +149,8 @@ export default function UpdatePetListing() {
                             />)}
                         </div>
                         <div>
-                            <label htmlFor="description">Description: {pet.description}</label>
-                            {showDescription ? (<button onClick={(e) => setShowDescription(false)}>&#9999;</button>) : 
+                            <label htmlFor="description">Description:</label>
+                            {showDescription ? (<button onClick={(e) => setShowDescription(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="description"
@@ -156,8 +158,8 @@ export default function UpdatePetListing() {
                             />)}
                         </div>
                         <div>
-                            <label htmlFor="breed">Breed: {pet.breed}</label>
-                            {showBreed ? (<button onClick={(e) => setShowBreed(false)}>&#9999;</button>) : 
+                            <label htmlFor="breed">Breed:</label>
+                            {showBreed ? (<button onClick={(e) => setShowBreed(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="breed"
@@ -165,8 +167,8 @@ export default function UpdatePetListing() {
                             />)}
                         </div>
                         <div>
-                            <label htmlFor="photo">Photo url: {pet.photo}</label>
-                            {showPhoto ? (<button onClick={(e) => setShowPhoto(false)}>&#9999;</button>) : 
+                            <label htmlFor="photo">Photo url:</label>
+                            {showPhoto ? (<button onClick={(e) => setShowPhoto(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="photo"
@@ -174,8 +176,8 @@ export default function UpdatePetListing() {
                             />)}
                         </div>
                         <div>
-                            <label htmlFor="adoptionStatus">Adoption Status: {pet.adoptionStatus}</label>
-                            {showAdoptionStatus ? (<button onClick={(e) => setShowAdoptionStatus(false)}>&#9999;</button>) : 
+                            <label htmlFor="adoptionStatus">Adoption Status:</label>
+                            {showAdoptionStatus ? (<button onClick={(e) => setShowAdoptionStatus(false)}><FontAwesomeIcon icon="fas fa-pencil" style={{color: "#503530",}} /></button>) : 
                             (<input
                                 type="text"
                                 id="adoptionStatus"

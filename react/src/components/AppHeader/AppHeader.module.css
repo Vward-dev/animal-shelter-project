@@ -10,8 +10,9 @@
 
 .logo{
    
-    margin: -50px;   
+    margin: -215px;   
     padding-left: 30px;
+    height: 200px;
     grid-area: logo;
 }
 

@@ -5,7 +5,6 @@ import { Navigate } from 'react-router-dom';
 export default function AppHeader({logo}) {
 
     return (
-        <>
             <header id='app-head' className={styles.headerGrid}>
                 
                     
@@ -20,6 +19,5 @@ export default function AppHeader({logo}) {
                     
                 
             </header>
-        </>
     )
 }

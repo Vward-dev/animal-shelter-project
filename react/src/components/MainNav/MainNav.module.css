@@ -13,3 +13,17 @@
 .nav-link:hover {
     background-color: #503530;
 }
+
+
+@media (max-width: 360px) {
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #efaa9c;
+    }
+    .nav-link {
+        text-align: center;
+    }   
+}

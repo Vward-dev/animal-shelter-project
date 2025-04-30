@@ -89,16 +89,34 @@ h1 {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
+    .header-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        width: auto;
+        margin: -40px;
+    }
+
+    #socials {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
     h1 {
-        font-size: 1.5rem;
+        font-size: 2rem;
+        padding: 10px;
     }
 
     .donate-button {
         font-size: medium;
         width: 100%;
         max-width: 200px;
-        margin: 10px auto;
+        margin: 20px auto;
         display: block;
     }
 }

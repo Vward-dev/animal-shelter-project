@@ -38,39 +38,23 @@
      font-size: 1.2rem;
  }
 
+
  /* Featured Pets Section */
- 
- .featured-pets {
+  .featured-pets {
     padding: 4rem;
+    text-align: center;
  }
 
  .featured-pets h2 {
     padding: 0;
      color: #503530;
-     font-size: 2rem;
+     font-size: 3rem;
      margin-top: -1rem;
      margin-bottom: 2rem;
      font-weight: bolder;
  }
 
- /*.pet-feature-cards {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 4rem;
-     
-    }
-
- .pet-feature-card {
-     display: inline-block;
-     vertical-align: top;
-     margin: 2rem;
-     width: calc(30% - 4rem);
-     background-color: rgb(245, 242, 238);
-     border-radius: 0.5rem;
-     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-     
- }*/
+ 
  .pet-feature-cards {
     display: flex;
     flex-wrap: wrap;
@@ -82,7 +66,7 @@
 }
 
 .pet-feature-card {
-    width: calc(40% - 4rem);
+    width: calc(50% - 4rem);
     min-width: 300px;
     max-width: 500px;
     background-color: rgb(245, 242, 238);
@@ -92,7 +76,7 @@
 }
 
 
-/*added*/
+
 .pet-feature-image {
     position: relative;
     width: 100%;
@@ -106,19 +90,8 @@
     width: 100%;
     height: 100%; 
     object-fit: cover;
-    /*object-position: center;*/
-    /*border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem; removed these */
+
   }
-
- /*.pet-feature-info {
-     padding: 3rem;
-     position: relative;
-     height: 200px;
-     overflow-y: auto;
-     padding: 2rem 2rem 2rem 2rem;
-
- } replaced this */
 
  .pet-feature-info {
     padding-top: 20px;
@@ -129,14 +102,14 @@
     margin-top: 20px;
  }
 
-/*added*/
+
  .pet-feature-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: #503530;
     font-weight: bold;
  }
- /*added*/
+
  .pet-feature-info p {
     font-size: 1rem;
     color: #503530;
@@ -209,10 +182,6 @@
     font-weight: bold;
   }
   
-
-
-
-
  .bottom-text {
      text-align: center;
      padding: 2rem;
@@ -228,32 +197,60 @@
 
 
 
-     /* Responsive Design */
-@media (max-width: 1000px) {
-    .pet-feature-card {
-        width: calc(80% - 2rem); 
-        margin: 1rem;
-    }
-}
+
 
 @media (max-width: 768px) {
     .pet-feature-card {
         width: 90%;
         margin: 1rem auto;
     }
+    .pet-feature-image{
+        aspect-ratio: unset;
+
+    }
 
     .pet-feature-image img {
-        height: 200px;
+        height: auto;
+        max-height: 300px;
+        border-radius: 0.5rem 0.5rem 0 0;
+        
+       /* height: 200px;*/
     }
 
     .pet-feature-info {
         padding: 1.5rem;
+        margin-top: 0;
+
     }
 
     .pet-badge {
-        padding: 0.3rem 1rem 0.3rem 2rem;
-        font-size: 0.7rem;
+        padding: 0.3rem 1rem;
+        font-size: 0.8rem;
         
     }
-}
+    .pet-adoption-card .pet-card {
+        flex-direction: column;
+        height: auto; 
+      }
+    
+      .pet-adoption-card .pet-image {
+        flex: 0 0 auto; 
+        width: 100%; 
+      }
+    
+      .pet-adoption-card .pet-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem 0.5rem 0 0; 
+        border-bottom-left-radius: 0; 
+      }
+    
+      .pet-adoption-card .pet-info {
+        padding: 1.5rem;
+      }
+    }
+    
+   
+    
+
  

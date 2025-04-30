@@ -10,10 +10,12 @@
 
 .logo{
    
-    margin: -50px;
+    margin: -50px;   
     padding-left: 30px;
     grid-area: logo;
 }
+
+
 
 h1 {
     font-size: 3rem;
@@ -33,6 +35,8 @@ h1 {
     grid-area: donate;
 }
 
+
+
 .donate-button:hover {
     
      background-color: #efaa9c;
@@ -51,6 +55,10 @@ h1 {
         align-items: end;
         grid-area: socials;
 }
+
+
+
+
 
 /*  Responsive styles */
 @media (max-width: 768px) {
@@ -94,3 +102,4 @@ h1 {
         display: block;
     }
 }
+

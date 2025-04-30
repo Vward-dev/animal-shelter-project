@@ -1,6 +1,14 @@
 input {
     background-color: antiquewhite;
 }
+.add-pet-header{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    padding-top: 15px;
+    
+    
+}
 
 .input-field {
     display: flex;

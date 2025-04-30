@@ -86,8 +86,9 @@ export default function PetProfileView({ pet }) {
                         <div>Breed: {petProfile.breed}</div>
                         <div>Age: {petProfile.age}</div>
                         <div>Sex: {petProfile.sex}</div>
-                        <div>{petProfile.description}</div>
+                        
                     </section>
+                    <div className={styles.petDescription}>Description: {petProfile.description}</div>
 
                     <section className={styles.imageContainer}>
                         <img className={styles.profileImage} src={petProfile.photo} alt={petProfile.name} />
@@ -99,20 +100,20 @@ export default function PetProfileView({ pet }) {
                     <h2 className={styles.adoptionFormHeader}>Apply to Adopt {petProfile.name}</h2>
                     <form className={styles.adoptionInfo}>
                         <div>
-                            <label>Your First Name:</label>
+                            <label>First Name:</label>
                             <input type='text' id='first_name'>
                             </input>
                         </div>
                         <div>
-                            <label>Your Last Name:</label>
+                            <label>Last Name:</label>
                             <input type='text' id='last_name'></input>
                         </div>
                         <div>
-                            <label>Your Phone:</label>
+                            <label>Phone:</label>
                             <input type='text' id='phone_number'></input>
                         </div>
                         <div>
-                            <label>Why would you like to adopt {petProfile.name}? :</label>
+                            <label>Tell us about you :</label>
                             <input type='text' id='adoption_reason'></input>
                         </div>
 
@@ -121,16 +122,12 @@ export default function PetProfileView({ pet }) {
 
                     </form>
                     <div id="bone-grouper">
-                    <button  className={styles.adoptButton}>
-                                <div className={styles.c1}></div>
-                                <div className={styles.c2}></div>
-                                <div className={styles.c3}></div>
-                                <div className={styles.c4}></div>
-                                <div className={styles.b1}>
-                                    <div className={styles.b2}>
+                    <button  className={styles.submitButton}>
+                               
+                                    <div >
                                         Adopt Me
                                     </div>
-                                    </div>
+                                    
                                
 
                             </button>

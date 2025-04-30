@@ -15,6 +15,9 @@
     font-weight: bold;
     padding: 10px;
 }
+.profile-details > div {
+    text-transform: capitalize;
+}
 
 .profile-card {
     display: flex;
@@ -98,6 +101,40 @@
 
 .pet-profile-header{
     font-family: 'Baloo 2', sans-serif;
+}
+.pet-description {
+font-family: 'Baloo 2', sans-serif;
+display: flex;
+justify-content: center;
+font-weight: bolder;
+overflow-y: auto;
+width: 60%;
+height: 100px;
+font-size: 20px;
+margin-bottom: 8px;
+margin-top: 20px;
+}   
+
+
+
+
+.submit-button{
+    background-color: antiquewhite;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 600;
+    border: 2px solid #503530;
+    color: #503530;
+    padding: 4px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-left: 7.5px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.submit-button:hover {
+    color: antiquewhite;
+    background-color: #efaa9c;
 }
 
 @media (max-width: 750px) {

@@ -45,10 +45,11 @@ export default function LoginView({ onLogin }) {
 
   return (
     <div id="view-login">
-      <h2>Login</h2>
+      <h1 className={styles.loginHeader}>Login</h1>
 
       <Notification notification={notification} clearNotification={() => setNotification(null)} />
 
+      <div className={styles.formContainer}>
       <form onSubmit={handleSubmit}>
 
         <div className="form-control">
@@ -66,6 +67,7 @@ export default function LoginView({ onLogin }) {
         <button type="submit" className={`btn-primary ${styles.formButton}`}>Sign in</button>
         <Link to="/register">New? Register here!</Link>
       </form>
+      </div>
     </div>
   );
 }

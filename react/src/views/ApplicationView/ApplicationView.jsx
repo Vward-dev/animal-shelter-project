@@ -72,7 +72,7 @@ export default function AddEditApplicationForm({
         <>
             {showApplicationForm ? (
                 <div>
-                    <h2> Volunteer Application Form</h2>
+                    <h1 className={styles.applicationHeader}> Volunteer Application Form</h1>
                     <div className={styles.formContainer}>
                         <form onSubmit={handleSubmit}>
 

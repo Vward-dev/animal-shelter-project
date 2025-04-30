@@ -1,6 +1,9 @@
 input {
     background-color: antiquewhite;
 }
+.application-header{
+    padding-top: 15px;
+}
 
 .input-field {
     display: flex;

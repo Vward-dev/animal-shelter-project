@@ -112,7 +112,7 @@ export default function UpdatePetListing() {
                     <form onSubmit={handleSubmit}>
                         <div>
                             <label htmlFor="name">Name: {pet.name}</label>
-                            {showName ? (<button onClick={(e) => setShowName(false)}>Edit</button>) : 
+                            {showName ? (<button onClick={(e) => setShowName(false)}>&#x270F;</button>) : 
                             (<input
                                 type="text"
                                 id="name"
@@ -121,7 +121,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="species">Species: {pet.species}</label>
-                            {showSpecies ? (<button onClick={(e) => setShowSpecies(false)}>Edit</button>) : 
+                            {showSpecies ? (<button onClick={(e) => setShowSpecies(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="species"
@@ -130,7 +130,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="age">Age: {pet.age}</label>
-                            {showAge ? (<button onClick={(e) => setShowAge(false)}>Edit</button>) : 
+                            {showAge ? (<button onClick={(e) => setShowAge(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="age"
@@ -139,7 +139,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="sex">Sex: {pet.sex}</label>
-                            {showSex ? (<button onClick={(e) => setShowSex(false)}>Edit</button>) : 
+                            {showSex ? (<button onClick={(e) => setShowSex(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="sex"
@@ -148,7 +148,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="description">Description: {pet.description}</label>
-                            {showDescription ? (<button onClick={(e) => setShowDescription(false)}>Edit</button>) : 
+                            {showDescription ? (<button onClick={(e) => setShowDescription(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="description"
@@ -157,7 +157,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="breed">Breed: {pet.breed}</label>
-                            {showBreed ? (<button onClick={(e) => setShowBreed(false)}>Edit</button>) : 
+                            {showBreed ? (<button onClick={(e) => setShowBreed(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="breed"
@@ -166,7 +166,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="photo">Photo url: {pet.photo}</label>
-                            {showPhoto ? (<button onClick={(e) => setShowPhoto(false)}>Edit</button>) : 
+                            {showPhoto ? (<button onClick={(e) => setShowPhoto(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="photo"
@@ -175,7 +175,7 @@ export default function UpdatePetListing() {
                         </div>
                         <div>
                             <label htmlFor="adoptionStatus">Adoption Status: {pet.adoptionStatus}</label>
-                            {showAdoptionStatus ? (<button onClick={(e) => setShowAdoptionStatus(false)}>Edit</button>) : 
+                            {showAdoptionStatus ? (<button onClick={(e) => setShowAdoptionStatus(false)}>&#9999;</button>) : 
                             (<input
                                 type="text"
                                 id="adoptionStatus"

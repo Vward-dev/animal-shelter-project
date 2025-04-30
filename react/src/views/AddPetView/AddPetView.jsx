@@ -61,7 +61,7 @@ export default function AddPetForm() {
         <>
             {showApplicationForm ? (
                 <div>
-                    <h2>Add new pet</h2>
+                    <h1 className={styles.addPetHeader}>Add new pet</h1>
                     <div className={styles.formContainer}>
                         <form onSubmit={handleSubmit}>
                             <div className={styles.inputField}>

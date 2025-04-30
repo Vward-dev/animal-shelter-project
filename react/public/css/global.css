@@ -196,6 +196,9 @@ input {
 button {
     border: 1px solid black;
     border-radius: 5px;
+    padding: 5px;
+   
+    
     
     
 }
@@ -204,6 +207,9 @@ button {
 
 .form-control {
     margin-bottom: 1rem;
+    display: flex;
+    
+
 }
 
 /* Table styles */

@@ -9,7 +9,11 @@ export default function UserProfileView() {
     <div className={styles.profile}>
       <h1>User Profile</h1>
       <br />
-      <p>Hello, {user.username}!</p>
+
+      <div className={styles.futureFeature}>
+      <p>*Hello, {user.username}!
+      This feature will be coming soon*</p>
+      </div>
     </div>
   );
 }

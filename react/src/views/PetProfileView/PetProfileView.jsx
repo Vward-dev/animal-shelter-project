@@ -18,6 +18,8 @@ export default function PetProfileView({ pet }) {
     const [emailAddress, setEmailAddress] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
+    const [showForm, setShowForm] = useState(true);
+
     const [showApplicationForm, setShowApplicationForm] = useState(true);
 
 
@@ -98,7 +100,7 @@ export default function PetProfileView({ pet }) {
 
                 <section className={styles.adoptionForm}>
                     <h2 className={styles.adoptionFormHeader}>Apply to Adopt {petProfile.name}</h2>
-                    <form className={styles.adoptionInfo}>
+                    {showForm ? (<><form className={styles.adoptionInfo}>
                         <div>
                             <label>First Name:</label>
                             <input type='text' id='first_name'>
@@ -122,7 +124,7 @@ export default function PetProfileView({ pet }) {
 
                     </form>
                     <div id="bone-grouper">
-                    <button  className={styles.submitButton}>
+                    <button  className={styles.submitButton} onClick={() => setShowForm(false)}>
                                
                                     <div >
                                         Adopt Me
@@ -131,7 +133,7 @@ export default function PetProfileView({ pet }) {
                                
 
                             </button>
-                            </div>
+                            </div></>) : (<h2>Your application has been submitted!</h2>)}
                     
 
 

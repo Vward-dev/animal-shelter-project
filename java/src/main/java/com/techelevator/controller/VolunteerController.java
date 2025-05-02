@@ -28,7 +28,7 @@ public class VolunteerController {
         this.volunteerService = volunteerService;
         this.userDao = userDao;
     }
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'VOLUNTEER')")
     @RequestMapping( method = RequestMethod.GET)
     public List<Volunteer> getVolunteers(@RequestParam(defaultValue = "") String search) {
 
